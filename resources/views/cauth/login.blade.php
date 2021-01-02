@@ -4,24 +4,24 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->
-	<!-- <link rel="icon" type="image/png" href="images/icons/favicon.ico"/> -->
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{{ asset('cauth/vendor/bootstrap/css/bootstrap.min.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{ assets('cauth/vendor/bootstrap/css/bootstrap.min.css')}}">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{{ asset('cauth/fonts/font-awesome-4.7.0/css/font-awesome.min.css')}}">
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{{ asset('cauth/vendor/animate/animate.css')}}">
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{{asset('cauth/vendor/css-hamburgers/hamburgers.min.css')}}">
+	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{{asset('cauth/vendor/animsition/css/animsition.min.css')}}">
+	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{{asset('cauth/vendor/select2/select2.min.css')}}">
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{{asset('cauth/vendor/daterangepicker/daterangepicker.css')}}">
+	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{{asset('cauth/css/util.css')}}">
-	<link rel="stylesheet" type="text/css" href="{{asset('cauth/css/main.css')}}">
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
 <!--===============================================================================================-->
 </head>
 <body>
@@ -37,16 +37,16 @@
 
 
           <div class="form-group row">
-              <label for="login" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address/Username') }}</label>
+              <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
 
               <div class="wrap-input100 validate-input m-b-16" data-validate="Please enter username">
-                  <input id="login" type="text" class="input100 {{ $errors->has('username') || $errors->has('email') ? 'is-invalid' : '' }}" name="login" value="{{ old('username') ?: old('email') }}" required autofocus>
+                  <input id="email" type="email" class="input100 @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
 
-                  @if($errors->has('username') || $errors->has('email'))
+                  @error('email')
                       <span class="invalid-feedback" role="alert">
-                          <strong>{{ $errors->first('username') ?: $errors->first('email') }}</strong>
+                          <strong>{{ $message }}</strong>
                       </span>
-                  @endif
+                  @enderror
               </div>
           </div>
 
@@ -100,21 +100,21 @@
 
 
 <!--===============================================================================================-->
-	<script src="{{asset('cauth/vendor/jquery/jquery-3.2.1.min.js')}}"></script>
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
 <!--===============================================================================================-->
-	<script src="{{asset('cauth/vendor/animsition/js/animsition.min.js')}}"></script>
+	<script src="vendor/animsition/js/animsition.min.js"></script>
 <!--===============================================================================================-->
-	<script src="{{asset('cauth/vendor/bootstrap/js/popper.js')}}"></script>
-	<script src="{{asset('cauth/vendor/bootstrap/js/bootstrap.min.js')}}"></script>
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
 <!--===============================================================================================-->
-	<script src="{{asset('cauth/vendor/select2/select2.min.js')}}"></script>
+	<script src="vendor/select2/select2.min.js"></script>
 <!--===============================================================================================-->
-	<script src="{{asset('cauth/vendor/daterangepicker/moment.min.js')}}"></script>
-	<script src="{{asset('cauth/vendor/daterangepicker/daterangepicker.js')}}"></script>
+	<script src="vendor/daterangepicker/moment.min.js"></script>
+	<script src="vendor/daterangepicker/daterangepicker.js"></script>
 <!--===============================================================================================-->
-	<script src="{{asset('cauth/vendor/countdowntime/countdowntime.js')}}"></script>
+	<script src="vendor/countdowntime/countdowntime.js"></script>
 <!--===============================================================================================-->
-	<script src="{{asset('cauth/js/main.js')}}"></script>
+	<script src="js/main.js"></script>
 
 </body>
 </html>
