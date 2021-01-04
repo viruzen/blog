@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Follow;
@@ -14,15 +15,13 @@ class ProfileController extends Controller
      */
     public function index()
     {
-      $user = Auth::user();
-      $user->post_count=Blog::where('user_id',$user->id)->count();
-      $user->follow_count=Follow::where('auth_id',$user->id)->count();
-      $user->follower_count=Follow::where('user_id',$user->id)->count();
-        return view('profile.user', compact('user'));
+        $user = Auth::user();
+        $user->post_count=Blog::where('user_id',$user->id)->count();
+        $user->follow_count=Follow::where('auth_id',$user->id)->count();
+        $user->follower_count=Follow::where('user_id',$user->id)->count();
 
-      $blogs = Blog::with(['user','category','tags','comments'])->paginate(9);
-dd($blogs);
-        return view('blog.index',compact('blogs'));
+        $blogs = Blog::with(['user','category','tags','comments'])->where('user_id',$user->id)->paginate(9);
+        return view('profile.user',compact('user','blogs'));
 
     }
 
@@ -64,12 +63,22 @@ dd($blogs);
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  string  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($username)
     {
-        //
+        $user = User::all()->where('username',$username)->first();
+        if(!empty($user)){
+            $user->post_count=Blog::where('user_id',$user->id)->count();
+            $user->follow_count=Follow::where('auth_id',$user->id)->count();
+            $user->follower_count=Follow::where('user_id',$user->id)->count();
+
+            $blogs = Blog::with(['user','category','tags','comments'])->where('user_id',$user->id)->paginate(9);
+            return view('profile.profile',compact('user','blogs'));
+        } else {
+            abort(404);
+        }
     }
 
     /**
