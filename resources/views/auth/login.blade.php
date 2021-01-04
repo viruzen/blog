@@ -37,7 +37,7 @@
 
 
           <div class="form-group row">
-              <label for="login" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address/Username') }}</label>
+              <label for="login" class="col">{{ ('E-Mail Address / Username') }}</label>
 
               <div class="wrap-input100 validate-input m-b-16" data-validate="Please enter username">
                   <input id="login" type="text" class="input100 {{ $errors->has('username') || $errors->has('email') ? 'is-invalid' : '' }}" name="login" value="{{ old('username') ?: old('email') }}" required autofocus>
@@ -52,7 +52,7 @@
 
 
           <div class="form-group row">
-              <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
+              <label for="password" class="col-md-4 ">{{ __('Password') }}</label>
 
               <div class="wrap-input100 validate-input" data-validate = "Please enter password">
                   <input id="password" type="password" class="input100 @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">

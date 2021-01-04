@@ -23,6 +23,10 @@ Route::prefix('blog')->group(function ()  {
     Route::post('/','BlogController@store')->name('blog.store');
 });
 
+Route::prefix('profile')->middleware('auth')->group(function() {
+  Route::get('/','ProfileController@index')->name('profile.index');
+});
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

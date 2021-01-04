@@ -64,7 +64,7 @@
 
  <a href="home.php">Home</a>
 
-  <a href="about.php">About</a>
+  <a href="/about">About</a>
   <a href="categories.php">Categories</a>
   <a href="book.php">Books</a>
   <a href="music.php">Music</a>
