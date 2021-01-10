@@ -141,14 +141,12 @@
     <div class="container-fluid">
         <div id="mySidebar" class="sidebar">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-            <a href="profile.php">Profile</a>
-
-            <a href="home.php">Home</a>
-            <a href="blog.php">Blogs</a>
-            <a href="about.php">About</a>
-            <a href="categories.php">Categories</a>
-            <a href="book.php">Books</a>
-            <a href="music.php">Music</a>
+            <a href="/profile">Profile</a>
+            <a href="/home">Home</a>
+            <a href="/about">About</a>
+            <a href="/category">Categories</a>
+            <a href="/book">Books</a>
+            <a href="/music">Music</a>
         </div>
 
         <div id="main">
@@ -270,7 +268,11 @@
                                     <div class="d-flex justify-content-between align-items-center">
                                         <div class="btn-group">
                                             <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                                            @if(Auth::check())
+                                                @if(Auth::user()->username==$user->username)
                                             <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                                            @endif
+                                            @endif
                                         </div>
                                         <small class="text-muted">Total Comments: <b>{{count($blog->comments)}}</b></small>
                                     </div>

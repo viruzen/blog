@@ -1,9 +1,11 @@
+
 <!DOCTYPE html>
 <html>
 <head>
   <script src="{{ asset('js/jquery.min.js') }}"></script>
     <link href="{{ asset('css/select2.min.css') }}" rel="stylesheet" />
 <script src="{{ asset('js/select2.min.js') }}"></script>
+<script src="{{ asset('node_modules/tinymce/tinymce.js') }}"></script>
 <style>
 * {
   box-sizing: border-box;
@@ -15,7 +17,7 @@ body{
 
   font-family: Times new roman;
   justify-content: center;
-   background: linear-gradient(to top right,#00dbde ,#fc00ff ,#00dbde ,#fc00ff );
+   background: white;
   background-size: cover;
   background-position: center;
 }
@@ -26,7 +28,7 @@ header{
 }
 .container {
   border-radius: 5px;
-  background-color: #f2f2f2;
+  background-color: #fcfcfc;
   padding: 20px;
 box-shadow: -2px 4px 28px 0px rgba(0,0,0,0.75);
 }
@@ -114,7 +116,7 @@ input[type=submit]:hover {
      {!! Form::label('body', 'Body', ['class' => 'col-md-2 control-label']) !!}
 
      <div class="col-md-8">
-         {!! Form::textarea('body', null, ['class' => 'form-input rounded-md shadow-sm mt-1 block w-full', 'required']) !!}
+         {!! Form::textarea('body', null, ['class' => 'body form-input rounded-md shadow-sm mt-1 block w-full', 'required']) !!}
 
          <span class="help-block">
              <strong>{{ $errors->first('body') }}</strong>
@@ -165,5 +167,17 @@ input[type=submit]:hover {
           tags: true
         });
       });
+
+      tinymce.init({
+        selector: 'textarea.body',
+        image_upload_url:'',
+        automatic_upload:false,
+        plugins: 'image code',
+        height:300,
+        branding:false,
+        menubar:false,
+        fontsize_formats: "8pt 10pt 12pt 14pt 18pt 24pt 36pt 48pt 64pt 72pt",
+        toolbar: "codesample | bold italic | sizeselect fontselect |     fontsizeselect | hr alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link code image | insertfile undo redo | forecolor backcolor emoticons | code "
+            });
   </script>
 </html>

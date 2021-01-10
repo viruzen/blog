@@ -152,7 +152,7 @@ body {
 			<h2>Oops, Error:Forbidden to access the Page you are looking for!</h2>
 			<br>
 			<br>
-			<a href="home.php"><span class="arrow"></span>Return To Homepage</a>
+			<a href="/index"><span class="arrow"></span>Return To Homepage</a>
 		</div>
 	</div>
 

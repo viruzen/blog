@@ -60,14 +60,12 @@
 <div id="mySidebar" class="sidebar">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
 
- <a href="profile.php">Profile</a>
-
- <a href="home.php">Home</a>
-
-  <a href="/about">About</a>
-  <a href="categories.php">Categories</a>
-  <a href="book.php">Books</a>
-  <a href="music.php">Music</a>
+  <a href="{{route('profile.index',['id'=>$blogs])}}">Profile</a>
+  <a href="{{route('blog.show',['id'=>$blogs])}}">Home</a>
+  <a href="{{route('about',['id'=>$blogs])}}">About</a>
+  <a href="{{route('category',['id'=>$blogs])}}">Category</a>
+  <a href="{{route('book',['id'=>$blogs])}}">Book</a>
+  <a href="{{route('music',['id'=>$blogs])}}">Music</a>
 </div>
 
 <div id="main">
@@ -130,8 +128,8 @@ function closeNav() {
               </div>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Profile</button>
+                  <a type="button"  href="{{route('blog.show',['id'=>$blog->id])}}" class="btn btn-sm btn-outline-secondary">View</a>
+                  <a type="button" href="{{route('user',['username'=>$blog->user['username']])}}" class="btn btn-sm btn-outline-secondary">Profile</a>
                 </div>
                 <small class="text-muted">- by <b>{{ $blog['user']['name'] }}</b></small>
               </div>

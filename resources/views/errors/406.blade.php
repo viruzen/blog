@@ -1,7 +1,7 @@
 <<!DOCTYPE html>
 <html lang="en">
 <style>
-	
+
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -139,7 +139,7 @@ body {
 	<!-- Custom stlylesheet -->
 	<link type="text/css" rel="stylesheet" href="css/style.css" />
 
-	
+
 </head>
 
 <body>
@@ -152,7 +152,7 @@ body {
 			<h2>Oops, Error:Your Request is Not Acceptable</h2>
 			<br>
 			<br>
-			<a href="home.php"><span class="arrow"></span>Return To Homepage</a>
+			<a href="/index"><span class="arrow"></span>Return To Homepage</a>
 		</div>
 	</div>
 

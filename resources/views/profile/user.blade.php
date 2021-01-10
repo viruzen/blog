@@ -141,14 +141,12 @@ h1 {
   <div class="container-fluid">
 <div id="mySidebar" class="sidebar">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-  <a href="profile.php">Profile</a>
-
-  <a href="home.php">Home</a>
-<a href="blog.php">Blogs</a>
-  <a href="about.php">About</a>
-  <a href="categories.php">Categories</a>
-  <a href="book.php">Books</a>
-  <a href="music.php">Music</a>
+  <a href="{{route('profile.index',['id'=>$blogs])}}">Profile</a>
+  <a href="{{route('blog.show',['id'=>$blogs])}}">Home</a>
+  <a href="{{route('about',['id'=>$blogs])}}">About</a>
+  <a href="{{route('category',['id'=>$blogs])}}">Category</a>
+  <a href="{{route('book',['id'=>$blogs])}}">Book</a>
+  <a href="{{route('music',['id'=>$blogs])}}">Music</a>
 </div>
 
 <div id="main">

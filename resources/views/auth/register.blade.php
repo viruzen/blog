@@ -147,7 +147,7 @@ body {
         <div class="form-group row">
             <label for="password" class="col-form-label col-4">{{ __('Password') }}</label>
 
-            <div class="col-md-6">
+            <div class="col-8">
                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
 
                 @error('password')
