@@ -14,13 +14,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get('/', function () {
-    return view('welcome');
+//Route::get('/', function () {
+//    return view('welcome');
+//
+//});
 
-});
+
+Route::get('/','BlogController@index')->name('blog.index');
 
 Route::prefix('blog')->group(function ()  {
-    Route::get('/','BlogController@index')->name('blog.index');
     Route::get('/create','BlogController@create')->name('blog.create');
     Route::get('/{id}','BlogController@show')->name('blog.show');
     Route::post('/','BlogController@store')->name('blog.store');
@@ -38,5 +40,7 @@ Route::get('/category','CategoryController@category')->name('category');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', function (){
+    return redirect('/profile');
+})->name('home');
 Route::get('/{username}','ProfileController@show')->name('user');

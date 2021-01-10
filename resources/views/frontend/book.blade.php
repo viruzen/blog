@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="css/style.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <link href="https://fonts.googeapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
+{{--  <link href="https://fonts.googeapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">--}}
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style type="text/css">
@@ -104,40 +104,7 @@ body {
 </head>
 
 <body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container-fluid">
-<div id="mySidebar" class="sidebar">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-  <a href="/profile">Profile</a>
-  <a href="/blog">Home</a>
-  <a href="/about">About</a>
-  <a href="/category">Categories</a>
-  <a href="/book">Books</a>
-  <a href="/music">Music</a>
-</div>
-
-<div id="main">
-  <button class="openbtn" onclick="openNav()">☰  REVUE</button>
-</div>
-
- <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit "> Search </button>
-      </form>
-</div>
-<script>
-function openNav() {
-  document.getElementById("mySidebar").style.width = "250px";
-  document.getElementById("main").style.marginLeft = "250px";
-}
-
-function closeNav() {
-  document.getElementById("mySidebar").style.width = "0";
-  document.getElementById("main").style.marginLeft= "0";
-}
-
-</script>
-</nav>
+@include('layouts.nav')
 <section class="my-5">
   <div class="py-5">
     <h1 class="text-center">BOOKS</h1>
@@ -145,7 +112,7 @@ function closeNav() {
   <div class="container-fluid">
     <div class="row">
 </div>
-   <h3 style="color:blue"; font: "times new roman"; align="center" >Top 10 Books :</h3>
+   <h3 style="color:blue; font: 'times new roman';" align="center" >Top 10 Books :</h3>
 
    <section class="my-5">
   <div class="py-5">
