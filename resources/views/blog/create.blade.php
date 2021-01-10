@@ -2,10 +2,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <script src="{{ asset('js/jquery.min.js') }}"></script>
+    <script src="{{ asset('js/jquery.min.js') }}"></script>
     <link href="{{ asset('css/select2.min.css') }}" rel="stylesheet" />
-<script src="{{ asset('js/select2.min.js') }}"></script>
-<script src="{{ asset('node_modules/tinymce/tinymce.js') }}"></script>
+    <script src="{{ asset('js/select2.min.js') }}"></script>
+    <script src="{{ asset('node_modules/tinymce/tinymce.js') }}"></script>
 <style>
 * {
   box-sizing: border-box;
@@ -30,7 +30,10 @@ header{
   border-radius: 5px;
   background-color: #fcfcfc;
   padding: 20px;
-box-shadow: -2px 4px 28px 0px rgba(0,0,0,0.75);
+  box-shadow: -2px 4px 28px 0px rgba(0,0,0,0.75);
+  width:60%;
+  max-width: 60%;
+  height: auto;
 }
 
 .btn {
@@ -95,8 +98,6 @@ input[type=submit]:hover {
 </head>
 <body>
 
-
-
 <div class="container">
  <header>Revue Blog Post</header>
  {!! Form::open(['url' => route('blog.store'), 'class' => 'form-horizontal', 'role' => 'form']) !!}
@@ -156,7 +157,9 @@ input[type=submit]:hover {
      </div>
  </div>
  <div class="flex items-center justify-end mt-4">
-{!! Form::submit('Submit', ['class' => 'btn btn-warning btn-sm fa fa-trash']) !!}
+   <button type="submit" onclick="tinyMCE.triggerSave();" class="btn btn-success">
+                                   {{ __('Post') }}
+                               </button>
                   </div>
  {!! Form::close() !!}
 </div>
@@ -166,18 +169,19 @@ input[type=submit]:hover {
         $('.select2-tags').select2({
           tags: true
         });
+        tinymce.init({
+          selector: 'textarea.body',
+          image_upload_url:'',
+          automatic_upload:false,
+          plugins: 'image code',
+          height:300,
+          branding:false,
+          menubar:false,
+          fontsize_formats: "8pt 10pt 12pt 14pt 18pt 24pt 36pt 48pt 64pt 72pt",
+          toolbar: "codesample | bold italic | sizeselect fontselect |     fontsizeselect | hr alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link code image | insertfile undo redo | forecolor backcolor emoticons | code "
+              });
       });
 
-      tinymce.init({
-        selector: 'textarea.body',
-        image_upload_url:'',
-        automatic_upload:false,
-        plugins: 'image code',
-        height:300,
-        branding:false,
-        menubar:false,
-        fontsize_formats: "8pt 10pt 12pt 14pt 18pt 24pt 36pt 48pt 64pt 72pt",
-        toolbar: "codesample | bold italic | sizeselect fontselect |     fontsizeselect | hr alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link code image | insertfile undo redo | forecolor backcolor emoticons | code "
-            });
+
   </script>
 </html>

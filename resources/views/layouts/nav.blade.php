@@ -11,7 +11,7 @@
 
             @guest
                 <a href="{{route('login')}}">Login</a>
-                <a href="">Register</a>
+                <a href="{{route('register')}}">Register</a>
             @endguest
             @auth
                 <a href="{{route('profile.index')}}">Profile</a>
