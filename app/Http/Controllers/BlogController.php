@@ -51,7 +51,7 @@ class BlogController extends Controller
         ])->id;
       });
       $blog->tags()->attach($tagsId);
-      return redirect('/blog')->with('key', 'You have done successfully');
+      return redirect()->route('blog.index')->with('key', 'You have done successfully');
     }
 
     /**
