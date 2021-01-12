@@ -1,120 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-<!--===============================================================================================-->
-	<!-- <link rel="icon" type="image/png" href="images/icons/favicon.ico"/> -->
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{{ asset('cauth/vendor/bootstrap/css/bootstrap.min.css')}}">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{{ asset('cauth/fonts/font-awesome-4.7.0/css/font-awesome.min.css')}}">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{{ asset('cauth/vendor/animate/animate.css')}}">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{{asset('cauth/vendor/css-hamburgers/hamburgers.min.css')}}">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{{asset('cauth/vendor/animsition/css/animsition.min.css')}}">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{{asset('cauth/vendor/select2/select2.min.css')}}">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{{asset('cauth/vendor/daterangepicker/daterangepicker.css')}}">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{{asset('cauth/css/util.css')}}">
-	<link rel="stylesheet" type="text/css" href="{{asset('cauth/css/main.css')}}">
-<!--===============================================================================================-->
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <style>
+        body {
+            color: #999;
+            background: #f3f3f3;
+            font-family: "Muli-Regular";
+            src: url("../fonts/muli/Muli-SemiBold.ttf");
+        }
+        .form-control {
+            border-color: #eee;
+            min-height: 41px;
+            box-shadow: none !important;
+        }
+        .form-control:focus {
+            border-color: #57B846;
+        }
+        .form-control, .btn {
+            border-radius: 3px;
+        }
+        .signup-form {
+            width: 500px;
+            margin: 0 auto;
+            padding: 30px 0;
+        }
+        .signup-form h2 {
+            color: BLACK;
+            margin: 0 0 30px 0;
+            display: inline-block;
+            padding: 0 30px 10px 0;
+            border-bottom: 3px solid #57B846;
+
+        }
+        .signup-form form {
+            color: #999;
+            border-radius: 3px;
+            margin-bottom: 15px;
+            background: #fff;
+            box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+            padding: 30px;
+        }
+        .signup-form .form-group row {
+            margin-bottom: 20px;
+        }
+        .signup-form label {
+            font-weight: normal;
+            font-size: 14px;
+            line-height: 2;
+        }
+        .signup-form input[type="checkbox"] {
+            position: relative;
+            top: 1px;
+        }
+        .signup-form .btn {
+            font-size: 16px;
+            font-weight: bold;
+            color: #fff;
+            text-transform: uppercase;
+            font-family: "Muli-SemiBold";
+            font-size: 15px;
+            letter-spacing: 2px;
+            background: #57B846;
+            border: none;
+            margin-top: 20px;
+            min-width: 140px;
+        }
+
+        .signup-form .btn:hover, .signup-form .btn:focus {
+            background: #57B846;
+            outline: none !important;
+        }
+        .signup-form a {
+            color: #57B846;
+            text-decoration: underline;
+        }
+        .signup-form a:hover {
+            text-decoration: none;
+        }
+        .signup-form form a {
+            color: #57B846;
+            text-decoration: none;
+        }
+        .signup-form form a:hover {
+            text-decoration: underline;
+        }
+
+    </style>
 </head>
 <body>
+<div class="signup-form" border=".rounded-sm ">
 
-	<div class="limiter">
-		<div class="container-login100">
-			<div class="wrap-login100">
-          <form method="POST" class="login100-form validate-form p-l-55 p-r-55 p-t-178" action="{{ route('login') }}">
-              @csrf
-					<span class="login100-form-title">
-						Sign In
-					</span>
+    <form method="POST" class="form-horizontal" action="{{ route('login') }}">
+        @csrf
+        <div class="row">
+            <div class="col-8 offset-4" >
+                <h2>Login</h2>
+            </div>
+        </div>
 
+        <div class="form-group row">
+            <label class="col-form-label col-4">Username</label>
+            <div class="col-8">
+                <input id="login" type="text" class="form-control {{ $errors->has('username') || $errors->has('email') ? 'is-invalid' : '' }}" name="login" value="{{ old('username') ?: old('email') }}" required autofocus>
+                @error('username')
+                <span class="invalid-feedback" role="alert">
+												<strong>{{ $message }}</strong>
+										</span>
+                @enderror
+            </div>
+        </div>
 
-          <div class="form-group row">
-              <label for="login" class="col">{{ ('E-Mail Address / Username') }}</label>
+        <div class="form-group row">
+            <label for="password" class="col-form-label col-4">{{ __('Password') }}</label>
 
-              <div class="wrap-input100 validate-input m-b-16" data-validate="Please enter username">
-                  <input id="login" type="text" class="input100 {{ $errors->has('username') || $errors->has('email') ? 'is-invalid' : '' }}" name="login" value="{{ old('username') ?: old('email') }}" required autofocus>
+            <div class="col-8">
+                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
 
-                  @if($errors->has('username') || $errors->has('email'))
-                      <span class="invalid-feedback" role="alert">
-                          <strong>{{ $errors->first('username') ?: $errors->first('email') }}</strong>
-                      </span>
-                  @endif
-              </div>
-          </div>
+                @error('password')
+                <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
+            </div>
+        </div>
 
-
-          <div class="form-group row">
-              <label for="password" class="col-md-4 ">{{ __('Password') }}</label>
-
-              <div class="wrap-input100 validate-input" data-validate = "Please enter password">
-                  <input id="password" type="password" class="input100 @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
-
-                  @error('password')
-                      <span class="invalid-feedback" role="alert">
-                          <strong>{{ $message }}</strong>
-                      </span>
-                  @enderror
-              </div>
-          </div>
-
-          @if (Route::has('password.request'))
-          <div class="text-right p-t-13 p-b-23">
-            <span class="txt1">
-              Forgot
-            </span>
-
-            <a class="btn btn-link" href="{{ route('password.request') }}">
-                {{ __('Forgot Your Password?') }}
-            </a>
-          </div>
-          @endif
-
-
-					<div class="container-login100-form-btn">
-						<button class="login100-form-btn">
-							Sign in
-						</button>
-					</div>
-
-					<div class="flex-col-c p-t-20 p-b-20">
-						<span class="txt1 p-b-9">
-							Don’t have an account?
-						</span>
-
-						<a href="#" class="txt3">
-							Sign up now
-						</a>
-					</div>
-				</form>
-			</div>
-		</div>
-	</div>
-
-
-<!--===============================================================================================-->
-	<script src="{{asset('cauth/vendor/jquery/jquery-3.2.1.min.js')}}"></script>
-<!--===============================================================================================-->
-	<script src="{{asset('cauth/vendor/animsition/js/animsition.min.js')}}"></script>
-<!--===============================================================================================-->
-	<script src="{{asset('cauth/vendor/bootstrap/js/popper.js')}}"></script>
-	<script src="{{asset('cauth/vendor/bootstrap/js/bootstrap.min.js')}}"></script>
-<!--===============================================================================================-->
-	<script src="{{asset('cauth/vendor/select2/select2.min.js')}}"></script>
-<!--===============================================================================================-->
-	<script src="{{asset('cauth/vendor/daterangepicker/moment.min.js')}}"></script>
-	<script src="{{asset('cauth/vendor/daterangepicker/daterangepicker.js')}}"></script>
-<!--===============================================================================================-->
-	<script src="{{asset('cauth/vendor/countdowntime/countdowntime.js')}}"></script>
-<!--===============================================================================================-->
-	<script src="{{asset('cauth/js/main.js')}}"></script>
-
+        <div class="form-group row">
+            <div class="col-8 offset-4">
+{{--                <p><label class="form-check-label"><input type="checkbox" required="required"> I accept the <a href="#">Terms of Use</a> &amp; <a href="#">Privacy Policy</a>.</label></p>--}}
+                <button type="submit" class="btn btn-primary btn-lg">
+                    {{ __('Login') }}
+                </button>
+            </div>
+        </div>
+    </form>
+    <div class="text-center">Already have an account? <a href="#">Login here</a></div>
+</div>
 </body>
 </html>
