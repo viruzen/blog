@@ -97,7 +97,7 @@ input[type=submit]:hover {
 </style>
 </head>
 <body>
-
+@include('layouts.nav')
 <div class="container">
  <header>Revue Blog Post</header>
  {!! Form::open(['url' => route('blog.store'), 'class' => 'form-horizontal', 'role' => 'form']) !!}

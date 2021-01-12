@@ -74,40 +74,7 @@ body {
 </style>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container-fluid">
-<div id="mySidebar" class="sidebar">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-  <a href="{{route('profile.index',['id'=>$blogs])}}">Profile</a>
-  <a href="{{route('blog.show',['id'=>$blogs])}}">Home</a>
-  <a href="{{route('about',['id'=>$blogs])}}">About</a>
-  <a href="{{route('category',['id'=>$blogs])}}">Category</a>
-  <a href="{{route('book',['id'=>$blogs])}}">Book</a>
-  <a href="{{route('music',['id'=>$blogs])}}">Music</a>
-</div>
-
-<div id="main">
-  <button class="openbtn" onclick="openNav()">☰ REVUE</button>
-</div>
-
- <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit "> Search </button>
-      </form>
-</div>
-<script>
-function openNav() {
-  document.getElementById("mySidebar").style.width = "250px";
-  document.getElementById("main").style.marginLeft = "250px";
-}
-
-function closeNav() {
-  document.getElementById("mySidebar").style.width = "0";
-  document.getElementById("main").style.marginLeft= "0";
-}
-
-</script>
-</nav>
+@include('layouts.nav')
 
 <section>
   <!Doctype html>
