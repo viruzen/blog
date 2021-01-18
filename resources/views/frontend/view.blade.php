@@ -74,19 +74,19 @@ color:black;
 </style>
 </head>
 <body>
-
+  @include('layouts.nav')
 <div class="header">
-  <h2>Blog Name</h2>
+  <h2>Blog</h2>
 </div>
 
 <div class="row">
   <div class="leftcolumn">
     <div class="card">
-      <h2>TITLE HEADING</h2>
-      <h5>Title description, Dec 7, 2017</h5>
+      <h2>{{ucfirst($blog->title)}}</h2>
+      <h5>{{$blog->category->name}}, {{$blog->created_at}}</h5>
       <div class="fakeimg" style="height:200px;">Image</div>
-      <p>Some text..</p>
-      <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+
+      <p>{!! html_entity_decode($blog->body) !!}</p>
       <form action="/html/tags/html_form_tag_action.cfm" method="post">
 <textarea name="comments" id="comments" style="width:92%;height:140px;padding:2%;font-size:1.2em;border:12px groove #6DB72C;">
 Enter your comments here...
@@ -94,13 +94,7 @@ Enter your comments here...
 <input type="submit" value="Submit Comment">
 </form>
     </div>
-    <div class="card">
-      <h2>TITLE HEADING</h2>
-      <h5>Title description, Sep 2, 2017</h5>
-      <div class="fakeimg" style="height:200px;">Image</div>
-      <p>Some text..</p>
-      <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
-    </div>
+    
   </div>
  </div>
  <footer>
