@@ -16,6 +16,27 @@ padding: 3px;
 background-color:lightgrey;
 color:black;
 }
+
+a:link {
+  color: green;
+  background-color: transparent;
+  text-decoration: none;
+}
+a:visited {
+  color: pink;
+  background-color: transparent;
+  text-decoration: none;
+}
+a:hover {
+  color: red;
+  background-color: transparent;
+  text-decoration: underline;
+}
+a:active {
+  color: yellow;
+  background-color: transparent;
+  text-decoration: underline;
+}
 /*body {
   font-family: "Lato", sans-serif;
 }
@@ -98,7 +119,7 @@ under one roof, is a flexible platform & may change or add
 number of other sections as per the change in the aptitude &
 interest with time of the users to remain relevant for every
 generation.</p>
-        <div class="btn btn-success" a href="{{route('moredetails')}}">Check More Details</div>
+        <div class="btn btn-success"><a href="{{route('moredetails')}}" target="_blank">Check More Details</div>
       </div>
     </div>
   </div>
