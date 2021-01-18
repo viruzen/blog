@@ -152,7 +152,7 @@ body {
 			<h2>Oops, Error:Payment to be done...</h2>
 			<br>
 			<br>
-			<a href="/index"><span class="arrow"></span>Return To Homepage</a>
+			<a href="{{route('blog.index')}}"><span class="arrow"></span>Return To Homepage</a>
 		</div>
 	</div>
 

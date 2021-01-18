@@ -36,7 +36,10 @@ Route::prefix('profile')->middleware('auth')->group(function() {
 Route::get('/about','FrontendController@about')->name('about');
 Route::get('/book','FrontendController@book')->name('book');
 Route::get('/music','FrontendController@music')->name('music');
+Route::get('/view','FrontendController@view')->name('view');
+Route::get('/moredetails','FrontendController@moredetails')->name('moredetails');
 Route::get('/category','CategoryController@category')->name('category');
+Route::get('/tags','TagsController@tags')->name('tags');
 
 Auth::routes();
 

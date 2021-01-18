@@ -11,6 +11,7 @@
 <style>
 body {
   font-family: "Lato", sans-serif;
+
 }
 
 .sidebar {
@@ -64,22 +65,19 @@ body {
   transition: margin-left .5s;
   padding: 16px;
 }
-
+footer {
+text-align: center;
+padding: 3px;
+background-color:lightgrey;
+color:black;
+}
 
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
 @media screen and (max-height: 450px) {
   .sidebar {padding-top: 15px;}
   .sidebar a {font-size: 18px;}
 }
-</style>
-</head>
-<body>
-@include('layouts.nav')
 
-<section>
-  <!Doctype html>
-<html>
-<style>
 .btn-group button {
   background-color: #4CAF50; /* Green background */
   border: 1px solid green; /* Green border */
@@ -87,6 +85,7 @@ body {
   padding: 10px 24px; /* Some padding */
   cursor: pointer; /* Pointer/hand icon */
   float: left; /* Float the buttons side by side */
+
 }
 
 /* Clear floats (clearfix hack) */
@@ -94,6 +93,7 @@ body {
   content: "";
   clear: both;
   display: table;
+
 }
 
 .btn-group button:not(:last-child) {
@@ -104,30 +104,52 @@ body {
 .btn-group button:hover {
   background-color: #3e8e41;
 }
+
+.center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
 </style>
+</head>
 <body>
+@include('layouts.nav')
 
-<p><h1>Categories:</h1></p>
+  <section class="my-5">
+    <div class="py-5">
+      <h1 class="text-center">Categories:</h1></div>
+</section>
 <br>
-<br>
-<br>
-<div class="btn-group" style="width:100%">
- <button style="width:33.3%">Story</button>
-  <button style="width:33.3%">Travel</button>
-  <button style="width:33.3%">Fashion</button>
-</div>
-
 <br>
 <br>
 
-<div class="btn-group" style="width:100%">
-  <button style="width:33.3%">Poem</button>
-  <button style="width:33.3%">Sports</button>
-  <button style="width:33.3%">Food</button>
-</div>
+    <div class="col-12"> <div class="center">
+<button type="button" class="btn btn-outline-primary">STORY</button>
+<button type="button" class="btn btn-outline-secondary">POEM</button>
+<button type="button" class="btn btn-outline-success">TRAVEL</button></div></div>
+<br>
 
+<br>
+<div class="col-12"> <div class="center">
+<button type="button" class="btn btn-outline-danger">FOOD</button>
+<button type="button" class="btn btn-outline-warning">FASHION</button>
+<button type="button" class="btn btn-outline-info">SPORTS</button>
+
+</div></div>
+<br>
+<br>
+<br>
+<br>
+<br>
 </body>
 </html>
 </section>
+<footer>
+  <h2>REVUE</h2>
+  <p>Knowledge with Entertainment - REVUE</p>
+</footer>
   </body>
   </html>

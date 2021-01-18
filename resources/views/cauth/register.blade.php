@@ -11,7 +11,9 @@
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
 <style>
+
 body {
 	color: #999;
 	background: #f3f3f3;
@@ -95,9 +97,76 @@ body {
 	text-decoration: underline;
 }
 
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidebar a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #111;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+}
+
+.openbtn:hover {
+  background-color: #444;
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 16px;
+}
+footer {
+text-align: center;
+padding: 3px;
+background-color:lightgrey;
+color:black;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidebar {padding-top: 15px;}
+  .sidebar a {font-size: 18px;}
+}
 </style>
+
 </head>
 <body>
+
+@include('layouts.nav')
+
 <div class="signup-form" border=".rounded-sm ">
 
       <form method="POST" class="form-horizontal" action="{{ route('register') }}">
@@ -163,14 +232,14 @@ body {
 
         <div class="form-group row">
     			<div class="col-8 offset-4">
-              <p><label class="form-check-label"><input type="checkbox" required="required"> I accept the <a href="#">Terms of Use</a> &amp; <a href="#">Privacy Policy</a>.</label></p>
+              <p><label class="form-check-label"><input type="checkbox" required="required"> I accept the <a href="{{ route('terms') }}">Terms of Use</a> &amp; <a href="{{ route('privacypolicy') }}">Privacy Policy</a>.</label></p>
                 <button type="submit" class="btn btn-primary btn-lg">
                     {{ __('Register') }}
                 </button>
             </div>
         </div>
     </form>
-	<div class="text-center">Already have an account? <a href="#">Login here</a></div>
+	<div class="text-center">Already have an account? <a href="{{route('login')}}">Login here</a></div>
 </div>
 </body>
 </html>

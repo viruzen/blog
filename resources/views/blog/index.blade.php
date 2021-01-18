@@ -9,6 +9,14 @@
     <!-- <link href="https://fonts.googeapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet"> -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="css/custom.css">
+    <style>
+    footer {
+    text-align: center;
+    padding: 3px;
+    background-color:lightgrey;
+    color:black;
+    }
+  </style>
 </head>
 
 <body>
@@ -67,7 +75,7 @@
                 interest with time of the users to remain relevant for every
                 generation.</p>
             <p>
-                <a href="moredetails.php">Click For More Details</a>
+                <a href="{{route('moredetails')}}">Click For More Details</a>
 
 
             </p>
@@ -117,9 +125,13 @@
 </div>
 
 </main>
-
+<footer>
+  <h2>REVUE</h2>
+  <p>Knowledge with Entertainment - REVUE</p>
+</footer>
 <script src="js/jquery.min.js"></script>
 <script src="js/popper.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
+
 </body>
 </html>

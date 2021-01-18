@@ -10,6 +10,12 @@
  <meta name="viewport" content="width=device-width, initial-scale=1">
  <link rel="stylesheet" type="text/css" href="css/custom.css">
 <style>
+footer {
+text-align: center;
+padding: 3px;
+background-color:lightgrey;
+color:black;
+}
 /*body {
   font-family: "Lato", sans-serif;
 }
@@ -75,10 +81,10 @@
 </head>
 <body>
   @include('layouts.nav')
-  
+
 <section class="my-5">
   <div class="py-5">
-    <h2 class="text-center">About Us</h2>
+    <h1 class="text-center">About Us</h1>
   </div>
   <div class="container-fluid">
     <div class="row">
@@ -86,15 +92,19 @@
         <img src="img/R.jpg" class="img-fluid aboutimg">
       </div>
       <div class="col-lg-6 col-md-6 col-12">
-        <h2 class="display-4">This is REVUE</h2>
+        <h3 class="display-7">This is REVUE</h3>
         <p class="py-3">A single platform for large varieties of entertainment,
 under one roof, is a flexible platform & may change or add
 number of other sections as per the change in the aptitude &
 interest with time of the users to remain relevant for every
 generation.</p>
-        <a href="/moredetails" class="btn btn-success">Check More Details</a>
+        <div class="btn btn-success" a href="{{route('moredetails')}}">Check More Details</div>
       </div>
     </div>
   </div>
 </section>
+<footer>
+  <h2>REVUE</h2>
+  <p>Knowledge with Entertainment - REVUE</p>
+</footer>
 </body></html>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <style>
-	
+
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -135,7 +135,7 @@ body {
 	<!-- Google font -->
 	<link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet">
-	
+
 </head>
 
 <body>
@@ -148,7 +148,7 @@ body {
 			<h2>Oops, Error:File is too Large!</h2>
 			<br>
 			<br>
-			<a href="home.php"><span class="arrow"></span>Return To Homepage</a>
+			<a href="{{route('blog.index')}}"><span class="arrow"></span>Return To Homepage</a>
 		</div>
 	</div>
 

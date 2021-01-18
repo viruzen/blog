@@ -67,9 +67,11 @@
 
         /* Add a gray background color and some padding to the footer */
         footer {
-            background-color: #f2f2f2;
-            padding: 20px;
-        }
+  text-align: center;
+  padding: 3px;
+  background-color:lightgrey;
+  color:black;
+}
 
         * {
             box-sizing: border-box;
@@ -256,9 +258,11 @@
 </main>
 <!-- END GRID -->
 </div>
-<footer class="container-fluid text-center">
-    <h2>REVUE</h2>
-    <p>Knowledge with Entertainment - REVUE</p>
+
+
+<footer>
+  <h2>REVUE</h2>
+  <p>Knowledge with Entertainment - REVUE</p>
 </footer>
 
 </body>

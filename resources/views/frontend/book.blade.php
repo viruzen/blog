@@ -100,6 +100,56 @@ body {
 }
 
 
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.flip-card {
+  background-color: transparent;
+  width: 200px;
+  height: 200px;
+  perspective: 1000px;
+
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  background-color: #bbb;
+  color: black;
+}
+
+.flip-card-back {
+  background-color: yellow;
+  color: black;
+  transform: rotateY(180deg);
+}
+footer {
+text-align: center;
+padding: 3px;
+background-color:lightgrey;
+color:black;
+}
 </style>
 </head>
 
@@ -109,40 +159,180 @@ body {
   <div class="py-5">
     <h1 class="text-center">BOOKS</h1>
   </div>
-  <div class="container-fluid">
-    <div class="row">
-</div>
-   <h3 style="color:blue; font: 'times new roman';" align="center" >Top 10 Books :</h3>
 
-   <section class="my-5">
-  <div class="py-5">
-<ul class="thumbs">
-    <li><a href="https://sites.google.com/a/newbestbookslala.web.app/perdinamuliksa/-pdf-download-a-promised-land-by-barack-obama"> <img src="https://obamabook.com/wp-content/uploads/2020/08/a-promised-land-barack-obama.png" width="150" height="150" alt="A Promised Land" ><span> A Promised Land </span></a></li>
+	<h3>Top 10 Books :</h3>
+	<br>
 
-    <li><a href="https://allbooksworld.com/writers-lovers-by-lily-king-epub-download/"> <img src="https://www.studycrux.com/image/5e7bb2407325e949fbe5ecd9" width="150" height="150" alt="writers lovers" ><span> Writers & Lovers</span></a></li>
-
-    <li><a href="https://www.yumpu.com/en/document/view/63013270/pdf-epub-uncanny-valley-memoir-anna-wiener"> <img src="https://m.media-amazon.com/images/I/51K9QACsHrL.jpg" width="150" height="150" alt="uncanny valley (memoir)" ><span> uncanny valley (memoir)</span></a></li>
-
-    <li><a href="https://sites.google.com/site/desarefrevergergegre/monikahogan116"> <img src="https://miro.medium.com/max/768/1*DMME-b1ywdcM5LniPS-C1A.jpeg" width="150" height="150" alt="Caste" ><span> Caste by Isabel Wilkerson</span></a></li>
-
-    <li><a href="https://allbooksworld.com/monogamy-by-sue-miller-epub-download/"> <img src="https://pbs.twimg.com/media/Ec3QJc8UMAAxdCA.jpg" width="150" height="150" alt="Monogamy by Sue Miller" ><span> Monogamy by Sue Miller</span></a></li>
-
-    <li><a href="https://allbooksworld.com/homeland-elegies-by-ayad-akhtar-epub-download/"> <img src="https://pbs.twimg.com/media/EiV57W1U8AEubyN.jpg" width="150" height="150" alt="Homeland Elegies by Ayad Akhtar" ><span> Homeland Elegies by Ayad Akhtar</span></a></li>
-
-<li><a href="https://www.yumpu.com/en/document/view/63909591/full-book-pdf-download-the-lying-life-of-adults-by-elena-ferrante"> <img src="https://www.studycrux.com/image/5f84179809a0062f183c96a6" width="150" height="150" alt="The Lying Life of Adults" ><span> The Lying Life of Adults by Elena Ferrante</span></a></li>
-
-<li><a href="https://allbooksworld.com/a-burning-by-megha-majumdar-251/"> <img src="https://i1.wp.com/pictures.abebooks.com/isbn/9780525658696.jpg" width="150" height="150" alt="A Burning" ><span> A Burning</span></a></li>
-
-<li><a href="https://twitter.com/i/events/1290360020014702593"> <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1594623934l/49779327._SX318_.jpg" width="150" height="150" alt="I Hold a Wolf by the Ears" ><span> I Hold a Wolf by the Ears</span></a></li>
-
-<li><a href="https://www.pinterest.ru/pin/682436149773888725/"> <img src="https://images-eu.ssl-images-amazon.com/images/I/31iZiPPvheL._SY445_QL70_ML2_.jpg" width="150" height="150" alt="Flake by Matthew Dooley" ><span> Flake by Matthew Dooley</span></a></li>
+	<div class="flip-card">
+	  <div class="flip-card-inner">
+	    <div class="flip-card-front">
+	        <img src="https://obamabook.com/wp-content/uploads/2020/08/a-promised-land-barack-obama.png" alt="A Promised Land" style="width:200px;height:200px;">
+	    </div>
+	    <div class="flip-card-back">
+	      <h3>A Promised Land</h3>
+	      <p>By: Barac Obama</p>
+	      <a href="https://sites.google.com/a/newbestbookslala.web.app/perdinamuliksa/-pdf-download-a-promised-land-by-barack-obama">Read this Book</a>
+	    </div>
+	  </div>
+	</div>
+	<br>
+	<br>
 
 
-</ul>
+	<div class="flip-card">
+	  <div class="flip-card-inner">
+	    <div class="flip-card-front">
+	        <img src="https://www.studycrux.com/image/5e7bb2407325e949fbe5ecd9" alt=" Writers & Lovers" style="width:200px;height:200px;">
+	    </div>
+	    <div class="flip-card-back">
+	      <h3> Writers & Lovers</h3>
+	      <p></p>
+	      <a href="https://allbooksworld.com/writers-lovers-by-lily-king-epub-download/">Read this Book</a>
+	    </div>
+	  </div>
+	</div>
+	<br>
+	<br>
 
-</div>
-</section>
-</div>
-</section>
+	<div class="flip-card">
+	  <div class="flip-card-inner">
+	    <div class="flip-card-front">
+	        <img src="https://www.studycrux.com/image/5e7bb2407325e949fbe5ecd9" alt=" Writers & Lovers" style="width:200px;height:200px;">
+	    </div>
+	    <div class="flip-card-back">
+	      <h3> Writers & Lovers</h3>
+	      <p></p>
+	      <a href="https://allbooksworld.com/writers-lovers-by-lily-king-epub-download/">Read this Book</a>
+	    </div>
+	  </div>
+	</div>
+	<br>
+	<br>
+
+	<div class="flip-card">
+	  <div class="flip-card-inner">
+	    <div class="flip-card-front">
+	        <img src="https://m.media-amazon.com/images/I/51K9QACsHrL.jpg" alt="uncanny valley (memoir)" style="width:200px;height:200px;">
+	    </div>
+	    <div class="flip-card-back">
+	      <h3> uncanny valley (memoir)</h3>
+	      <p></p>
+	      <a href="https://www.yumpu.com/en/document/view/63013270/pdf-epub-uncanny-valley-memoir-anna-wiener">Read this Book</a>
+	    </div>
+	  </div>
+	</div>
+	<br>
+	<br>
+
+	<div class="flip-card">
+	  <div class="flip-card-inner">
+	    <div class="flip-card-front">
+	        <img src="https://miro.medium.com/max/768/1*DMME-b1ywdcM5LniPS-C1A.jpeg" alt="Caste by Isabel Wilkerson<" style="width:200px;height:200px;">
+	    </div>
+	    <div class="flip-card-back">
+	      <h3>Caste</h3>
+	      <p> by:Isabel Wilkerson</p>
+	      <a href="https://sites.google.com/site/desarefrevergergegre/monikahogan116">Read this Book</a>
+	    </div>
+	  </div>
+	</div>
+	<br>
+	<br>
+
+
+	<div class="flip-card">
+	  <div class="flip-card-inner">
+	    <div class="flip-card-front">
+	        <img src="https://pbs.twimg.com/media/Ec3QJc8UMAAxdCA.jpg" alt=" Monogamy by Sue Miller" style="width:200px;height:200px;">
+	    </div>
+	    <div class="flip-card-back">
+	      <h3> Monogamy</h3>
+	      <p> by:Sue Miller</p>
+	      <a href="https://allbooksworld.com/monogamy-by-sue-miller-epub-download/">Read this Book</a>
+	    </div>
+	  </div>
+	</div>
+	<br>
+	<br>
+
+
+	<div class="flip-card">
+	  <div class="flip-card-inner">
+	    <div class="flip-card-front">
+	        <img src="https://pbs.twimg.com/media/EiV57W1U8AEubyN.jpg" alt=" Homeland Elegies by Ayad Akhtar" style="width:200px;height:200px;">
+	    </div>
+	    <div class="flip-card-back">
+	      <h3> Homeland Elegies</h3>
+	      <p> by:Ayad Akhtar</p>
+	      <a href="https://allbooksworld.com/homeland-elegies-by-ayad-akhtar-epub-download/">Read this Book</a>
+	    </div>
+	  </div>
+	</div>
+	<br>
+	<br>
+
+	<div class="flip-card">
+	  <div class="flip-card-inner">
+	    <div class="flip-card-front">
+	        <img src="https://www.studycrux.com/image/5f84179809a0062f183c96a6" alt="The Lying Life of Adults" style="width:200px;height:200px;">
+	    </div>
+	    <div class="flip-card-back">
+	      <h3>The Lying Life of Adults</h3>
+	      <a href="https://www.yumpu.com/en/document/view/63909591/full-book-pdf-download-the-lying-life-of-adults-by-elena-ferrante">Read this Book</a>
+	    </div>
+	  </div>
+	</div>
+	<br>
+	<br>
+
+	<div class="flip-card">
+	  <div class="flip-card-inner">
+	    <div class="flip-card-front">
+	        <img src="https://i1.wp.com/pictures.abebooks.com/isbn/9780525658696.jpg" alt=" A Burning" style="width:200px;height:200px;">
+	    </div>
+	    <div class="flip-card-back">
+	      <h3>A Burning</h3>
+	      <a href="https://allbooksworld.com/a-burning-by-megha-majumdar-251/">Read this Book</a>
+	    </div>
+	  </div>
+	</div>
+	<br>
+	<br>
+
+
+	<div class="flip-card">
+	  <div class="flip-card-inner">
+	    <div class="flip-card-front">
+	        <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1594623934l/49779327._SX318_.jpg" alt="I Hold a Wolf by the Ears" style="width:200px;height:200px;">
+	    </div>
+	    <div class="flip-card-back">
+	      <h3>I Hold a Wolf by the Ears</h3>
+	      <a href="https://twitter.com/i/events/1290360020014702593">Read this Book</a>
+	    </div>
+	  </div>
+	</div>
+	<br>
+	<br>
+
+
+	<div class="flip-card">
+	  <div class="flip-card-inner">
+	    <div class="flip-card-front">
+	        <img src="https://images-eu.ssl-images-amazon.com/images/I/31iZiPPvheL._SY445_QL70_ML2_.jpg" alt="Flake by Matthew Dooley" style="width:200px;height:200px;">
+	    </div>
+	    <div class="flip-card-back">
+	      <h3>Flake</h3>
+	      <p> by:Matthew Dooley</p>
+	      <a href="https://www.pinterest.ru/pin/682436149773888725/">Read this Book</a>
+	    </div>
+	  </div>
+	</div>
+	<br>
+	<br>
+	<br>
+<footer>
+  <h2>REVUE</h2>
+  <p>Knowledge with Entertainment - REVUE</p>
+</footer>
 </body>
 </html>

@@ -1,103 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- <link href="https://fonts.googeapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/custom.css">
+    <style>
+    footer {
+    text-align: center;
+    padding: 3px;
+    background-color:lightgrey;
+    color:black;
+    }
+  </style>
+</head>
+
+<body>
+
+  @include('layouts.nav')
+  
+</body>
+</html>
 
 <!DOCTYPE html>
 <html>
 <head>
+    <title></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="{{ asset('js/jquery.min.js') }}"></script>
     <link href="{{ asset('css/select2.min.css') }}" rel="stylesheet" />
     <script src="{{ asset('js/select2.min.js') }}"></script>
     <script src="{{ asset('node_modules/tinymce/tinymce.js') }}"></script>
-<style>
-* {
-  box-sizing: border-box;
-}
+    <style>
 
-body{
-  height:150vh;
-  display: flex;
+        * {
+            box-sizing: border-box;
+        }
 
-  font-family: Times new roman;
-  justify-content: center;
-   background: white;
-  background-size: cover;
-  background-position: center;
-}
-header{
-  font-size: 40px;
-  margin-bottom: 60px;
-  font-family: 'Montserrat', sans-serif;
-}
-.container {
-  border-radius: 5px;
-  background-color: #fcfcfc;
-  padding: 20px;
-  box-shadow: -2px 4px 28px 0px rgba(0,0,0,0.75);
-  width:60%;
-  max-width: 60%;
-  height: auto;
-}
+        /* Center website */
+        .main {
+            max-width: 1000px;
+            margin: auto;
+        }
 
-.btn {
-  margin-top: 30px;
-}
+        h1 {
+            font-size: 50px;
+            word-break: break-all;
+        }
 
-input[type=text], select, textarea {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  resize: vertical;
-}
+        .row {
+            margin: 8px -16px;
+        }
 
-label {
-  padding: 12px 12px 12px 0;
-  display: inline-block;
-}
+        /* Add padding BETWEEN each column */
+        .row,
+        .row > .column {
+            padding: 8px;
+        }
 
-input[type=submit] {
-  background-color: #4CAF50;
-  color: white;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  float: right;
-}
+        /* Create four equal columns that floats next to each other */
+        .column {
+            float: left;
+            width: 25%;
+        }
 
-input[type=submit]:hover {
-  background-color: #45a049;
-}
+        /* Clear floats after rows */
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        /* Content */
+        .content {
+            background-color: white;
+            padding: 10px;
+        }
+
+        /* Responsive layout - makes a two column-layout instead of four columns */
+        @media screen and (max-width: 900px) {
+            .column {
+                width: 50%;
+            }
+        }
+
+        /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+        @media screen and (max-width: 600px) {
+            .column {
+                width: 100%;
+            }
+        }
+        /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+        @media screen and (max-height: 450px) {
+            .sidebar {padding-top: 15px;}
+            .sidebar a {font-size: 18px;}
+        }
+        * {
+          box-sizing: border-box;
+        }
+
+        body{
+          height:150vh;
+          display: flex;
+
+          font-family: Times new roman;
+          justify-content: center;
+           background: white;
+          background-size: cover;
+          background-position: center;
+        }
+        header{
+          font-size: 40px;
+          margin-bottom: 60px;
+          font-family: 'Montserrat', sans-serif;
+        }
+        .container {
+          border-radius: 5px;
+          background-color: #fcfcfc;
+          padding: 20px;
+          box-shadow: -2px 4px 28px 0px rgba(0,0,0,0.75);
+          width:60%;
+          max-width: 60%;
+          height: auto;
+        }
+
+        .btn {
+          margin-top: 30px;
+        }
+
+        input[type=text], select, textarea {
+          width: 100%;
+          padding: 12px;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          resize: vertical;
+        }
+
+        label {
+          padding: 12px 12px 12px 0;
+          display: inline-block;
+        }
+
+        input[type=submit] {
+          background-color: #4CAF50;
+          color: white;
+          padding: 12px 20px;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+          float: right;
+        }
+
+        input[type=submit]:hover {
+          background-color: #45a049;
+        }
 
 
-.col-25 {
-  float: left;
-  width: 25%;
-  margin-top: 6px;
-}
+        .col-25 {
+          float: left;
+          width: 25%;
+          margin-top: 6px;
+        }
 
-.col-75 {
-  float: left;
-  width: 75%;
-  margin-top: 6px;
-}
+        .col-75 {
+          float: left;
+          width: 75%;
+          margin-top: 6px;
+        }
 
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
+        /* Clear floats after the columns */
+        .row:after {
+          content: "";
+          display: table;
+          clear: both;
+        }
 
-/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 600px) {
-  .col-25, .col-75, input[type=submit] {
-    width: 100%;
-    margin-top: 0;
-  }
-}
-</style>
+        /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+        @media screen and (max-width: 600px) {
+          .col-25, .col-75, input[type=submit] {
+            width: 100%;
+            margin-top: 0;
+          }
+        }
+        /* Add a gray background color and some padding to the footer */
+        footer {
+        text-align: center;
+        padding: 3px;
+        background-color:lightgrey;
+        color:black;
+        }
+
+
+    </style>
 </head>
 <body>
-@include('layouts.nav')
+
 <div class="container">
  <header>Revue Blog Post</header>
  {!! Form::open(['url' => route('blog.store'), 'class' => 'form-horizontal', 'role' => 'form']) !!}
@@ -163,6 +265,10 @@ input[type=submit]:hover {
                   </div>
  {!! Form::close() !!}
 </div>
+<footer>
+  <h2>REVUE</h2>
+  <p>Knowledge with Entertainment - REVUE</p>
+</footer>
 </body>
 <script>
       $(document).ready(function() {
@@ -181,7 +287,6 @@ input[type=submit]:hover {
           toolbar: "codesample | bold italic | sizeselect fontselect |     fontsizeselect | hr alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link code image | insertfile undo redo | forecolor backcolor emoticons | code "
               });
       });
-
 
   </script>
 </html>
