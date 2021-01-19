@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+  <title>BOOK</title>
 <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="css/style.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-{{--  <link href="https://fonts.googeapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">--}}
+  <link href="https://fonts.googeapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style type="text/css">
@@ -36,7 +36,7 @@ ul.thumbs li a:hover img { border-color:#f00 }
 
 body {
   font-family: "Lato", sans-serif;
-  height: 2250px;
+  height: 1450px;
   background: linear-gradient(141deg, #0fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);
 }
 
@@ -100,8 +100,14 @@ body {
 }
 
 
-body {
-  font-family: Arial, Helvetica, sans-serif;
+
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: center;
+  align-items: center;
+  grid-gap: 30px;
 }
 
 .flip-card {
@@ -155,184 +161,152 @@ color:black;
 
 <body>
 @include('layouts.nav')
-<section class="my-5">
+
   <div class="py-5">
     <h1 class="text-center">BOOKS</h1>
   </div>
 
-	<h3>Top 10 Books :</h3>
-	<br>
+
+<section id="team">
+  <div class="container">
+    <div class="grid">
+      <!-- #str heroes -->
+      <!-- #abaddon -->
+
+      <div class="flip-card">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+          <img src="https://obamabook.com/wp-content/uploads/2020/08/a-promised-land-barack-obama.png" alt="A Promised Land" style="width:200px;height:200px;">
+      </div>
+      <div class="flip-card-back">
+        <h3>A Promised Land</h3>
+        <p>By: Barac Obama</p>
+        <a href="https://sites.google.com/a/newbestbookslala.web.app/perdinamuliksa/-pdf-download-a-promised-land-by-barack-obama">Read this Book</a>
+      </div>
+    </div>
+  </div>
+
+     <div class="flip-card">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+          <img src="https://www.studycrux.com/image/5e7bb2407325e949fbe5ecd9" alt=" Writers & Lovers" style="width:200px;height:200px;">
+      </div>
+      <div class="flip-card-back">
+        <h3> Writers & Lovers</h3>
+        <p></p>
+        <a href="https://allbooksworld.com/writers-lovers-by-lily-king-epub-download/">Read this Book</a>
+      </div>
+    </div>
+  </div>
+
+     <div class="flip-card">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+          <img src="https://m.media-amazon.com/images/I/51K9QACsHrL.jpg" alt="uncanny valley (memoir)" style="width:200px;height:200px;">
+      </div>
+      <div class="flip-card-back">
+        <h3> uncanny valley (memoir)</h3>
+        <p></p>
+        <a href="https://www.yumpu.com/en/document/view/63013270/pdf-epub-uncanny-valley-memoir-anna-wiener">Read this Book</a>
+      </div>
+    </div>
+  </div>
+
+        <div class="flip-card">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+          <img src="https://miro.medium.com/max/768/1*DMME-b1ywdcM5LniPS-C1A.jpeg" alt="Caste by Isabel Wilkerson<" style="width:200px;height:200px;">
+      </div>
+      <div class="flip-card-back">
+        <h3>Caste</h3>
+        <p> by:Isabel Wilkerson</p>
+        <a href="https://sites.google.com/site/desarefrevergergegre/monikahogan116">Read this Book</a>
+      </div>
+    </div>
+  </div>
+
+        <div class="flip-card">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+          <img src="https://pbs.twimg.com/media/EiV57W1U8AEubyN.jpg" alt=" Homeland Elegies by Ayad Akhtar" style="width:200px;height:200px;">
+      </div>
+      <div class="flip-card-back">
+        <h3> Homeland Elegies</h3>
+        <p> by:Ayad Akhtar</p>
+        <a href="https://allbooksworld.com/homeland-elegies-by-ayad-akhtar-epub-download/">Read this Book</a>
+      </div>
+    </div>
+  </div>
+
+      <div class="flip-card">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+          <img src="https://www.studycrux.com/image/5f84179809a0062f183c96a6" alt="The Lying Life of Adults" style="width:200px;height:200px;">
+      </div>
+      <div class="flip-card-back">
+        <h3>The Lying Life of Adults</h3>
+        <a href="https://www.yumpu.com/en/document/view/63909591/full-book-pdf-download-the-lying-life-of-adults-by-elena-ferrante">Read this Book</a>
+      </div>
+    </div>
+  </div>
+
+      <div class="flip-card">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+          <img src="https://i1.wp.com/pictures.abebooks.com/isbn/9780525658696.jpg" alt=" A Burning" style="width:200px;height:200px;">
+      </div>
+      <div class="flip-card-back">
+        <h3>A Burning</h3>
+        <a href="https://allbooksworld.com/a-burning-by-megha-majumdar-251/">Read this Book</a>
+      </div>
+    </div>
+  </div>
+
+     <div class="flip-card">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+          <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1594623934l/49779327._SX318_.jpg" alt="I Hold a Wolf by the Ears" style="width:200px;height:200px;">
+      </div>
+      <div class="flip-card-back">
+        <h3>I Hold a Wolf by the Ears</h3>
+        <a href="https://twitter.com/i/events/1290360020014702593">Read this Book</a>
+      </div>
+    </div>
+  </div>
 
 	<div class="flip-card">
-	  <div class="flip-card-inner">
-	    <div class="flip-card-front">
-	        <img src="https://obamabook.com/wp-content/uploads/2020/08/a-promised-land-barack-obama.png" alt="A Promised Land" style="width:200px;height:200px;">
-	    </div>
-	    <div class="flip-card-back">
-	      <h3>A Promised Land</h3>
-	      <p>By: Barac Obama</p>
-	      <a href="https://sites.google.com/a/newbestbookslala.web.app/perdinamuliksa/-pdf-download-a-promised-land-by-barack-obama">Read this Book</a>
-	    </div>
-	  </div>
+<div class="flip-card-inner">
+	<div class="flip-card-front">
+			<img src="https://www.google.com/imgres?imgurl=https%3A%2F%2Fi.gr-assets.com%2Fimages%2FS%2Fcompressed.photo.goodreads.com%2Fbooks%2F1564199892l%2F45754981.jpg&imgrefurl=https%3A%2F%2Fwww.goodreads.com%2Fbook%2Fshow%2F45754981-the-glass-hotel&tbnid=cECZ-UuAiMEr-M&vet=12ahUKEwiFgMfH26juAhVygEsFHSXfDxsQMygAegUIARCfAQ..i&docid=8FETvmGPnCQfRM&w=1000&h=1498&q=The%20Glass%20Hotel&ved=2ahUKEwiFgMfH26juAhVygEsFHSXfDxsQMygAegUIARCfAQ" alt="The Glass Hotel" style="width:200px;height:200px;">
 	</div>
-	<br>
-	<br>
-
-
-	<div class="flip-card">
-	  <div class="flip-card-inner">
-	    <div class="flip-card-front">
-	        <img src="https://www.studycrux.com/image/5e7bb2407325e949fbe5ecd9" alt=" Writers & Lovers" style="width:200px;height:200px;">
-	    </div>
-	    <div class="flip-card-back">
-	      <h3> Writers & Lovers</h3>
-	      <p></p>
-	      <a href="https://allbooksworld.com/writers-lovers-by-lily-king-epub-download/">Read this Book</a>
-	    </div>
-	  </div>
+	<div class="flip-card-back">
+		<h3>The Glass Hotel</h3>
+		<p>by:Emily John Mandel</p>
+		<a href="https://www.goodreads.com/book/show/45754981-the-glass-hotel">Read this Book</a>
 	</div>
-	<br>
-	<br>
+</div>
+</div>
 
-	<div class="flip-card">
-	  <div class="flip-card-inner">
-	    <div class="flip-card-front">
-	        <img src="https://www.studycrux.com/image/5e7bb2407325e949fbe5ecd9" alt=" Writers & Lovers" style="width:200px;height:200px;">
-	    </div>
-	    <div class="flip-card-back">
-	      <h3> Writers & Lovers</h3>
-	      <p></p>
-	      <a href="https://allbooksworld.com/writers-lovers-by-lily-king-epub-download/">Read this Book</a>
-	    </div>
-	  </div>
-	</div>
-	<br>
-	<br>
+      <div class="flip-card">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+          <img src="https://images-eu.ssl-images-amazon.com/images/I/31iZiPPvheL._SY445_QL70_ML2_.jpg" alt="Flake by Matthew Dooley" style="width:200px;height:200px;">
+      </div>
+      <div class="flip-card-back">
+        <h3>Flake</h3>
+        <p> by:Matthew Dooley</p>
+        <a href="https://www.pinterest.ru/pin/682436149773888725/">Read this Book</a>
+      </div>
+    </div>
+  </div>
 
-	<div class="flip-card">
-	  <div class="flip-card-inner">
-	    <div class="flip-card-front">
-	        <img src="https://m.media-amazon.com/images/I/51K9QACsHrL.jpg" alt="uncanny valley (memoir)" style="width:200px;height:200px;">
-	    </div>
-	    <div class="flip-card-back">
-	      <h3> uncanny valley (memoir)</h3>
-	      <p></p>
-	      <a href="https://www.yumpu.com/en/document/view/63013270/pdf-epub-uncanny-valley-memoir-anna-wiener">Read this Book</a>
-	    </div>
-	  </div>
-	</div>
-	<br>
-	<br>
+	<footer>
+	  <h2>REVUE</h2>
+	  <p>Knowledge with Entertainment - REVUE</p>
+	</footer>
 
-	<div class="flip-card">
-	  <div class="flip-card-inner">
-	    <div class="flip-card-front">
-	        <img src="https://miro.medium.com/max/768/1*DMME-b1ywdcM5LniPS-C1A.jpeg" alt="Caste by Isabel Wilkerson<" style="width:200px;height:200px;">
-	    </div>
-	    <div class="flip-card-back">
-	      <h3>Caste</h3>
-	      <p> by:Isabel Wilkerson</p>
-	      <a href="https://sites.google.com/site/desarefrevergergegre/monikahogan116">Read this Book</a>
-	    </div>
-	  </div>
-	</div>
-	<br>
-	<br>
-
-
-	<div class="flip-card">
-	  <div class="flip-card-inner">
-	    <div class="flip-card-front">
-	        <img src="https://pbs.twimg.com/media/Ec3QJc8UMAAxdCA.jpg" alt=" Monogamy by Sue Miller" style="width:200px;height:200px;">
-	    </div>
-	    <div class="flip-card-back">
-	      <h3> Monogamy</h3>
-	      <p> by:Sue Miller</p>
-	      <a href="https://allbooksworld.com/monogamy-by-sue-miller-epub-download/">Read this Book</a>
-	    </div>
-	  </div>
-	</div>
-	<br>
-	<br>
-
-
-	<div class="flip-card">
-	  <div class="flip-card-inner">
-	    <div class="flip-card-front">
-	        <img src="https://pbs.twimg.com/media/EiV57W1U8AEubyN.jpg" alt=" Homeland Elegies by Ayad Akhtar" style="width:200px;height:200px;">
-	    </div>
-	    <div class="flip-card-back">
-	      <h3> Homeland Elegies</h3>
-	      <p> by:Ayad Akhtar</p>
-	      <a href="https://allbooksworld.com/homeland-elegies-by-ayad-akhtar-epub-download/">Read this Book</a>
-	    </div>
-	  </div>
-	</div>
-	<br>
-	<br>
-
-	<div class="flip-card">
-	  <div class="flip-card-inner">
-	    <div class="flip-card-front">
-	        <img src="https://www.studycrux.com/image/5f84179809a0062f183c96a6" alt="The Lying Life of Adults" style="width:200px;height:200px;">
-	    </div>
-	    <div class="flip-card-back">
-	      <h3>The Lying Life of Adults</h3>
-	      <a href="https://www.yumpu.com/en/document/view/63909591/full-book-pdf-download-the-lying-life-of-adults-by-elena-ferrante">Read this Book</a>
-	    </div>
-	  </div>
-	</div>
-	<br>
-	<br>
-
-	<div class="flip-card">
-	  <div class="flip-card-inner">
-	    <div class="flip-card-front">
-	        <img src="https://i1.wp.com/pictures.abebooks.com/isbn/9780525658696.jpg" alt=" A Burning" style="width:200px;height:200px;">
-	    </div>
-	    <div class="flip-card-back">
-	      <h3>A Burning</h3>
-	      <a href="https://allbooksworld.com/a-burning-by-megha-majumdar-251/">Read this Book</a>
-	    </div>
-	  </div>
-	</div>
-	<br>
-	<br>
-
-
-	<div class="flip-card">
-	  <div class="flip-card-inner">
-	    <div class="flip-card-front">
-	        <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1594623934l/49779327._SX318_.jpg" alt="I Hold a Wolf by the Ears" style="width:200px;height:200px;">
-	    </div>
-	    <div class="flip-card-back">
-	      <h3>I Hold a Wolf by the Ears</h3>
-	      <a href="https://twitter.com/i/events/1290360020014702593">Read this Book</a>
-	    </div>
-	  </div>
-	</div>
-	<br>
-	<br>
-
-
-	<div class="flip-card">
-	  <div class="flip-card-inner">
-	    <div class="flip-card-front">
-	        <img src="https://images-eu.ssl-images-amazon.com/images/I/31iZiPPvheL._SY445_QL70_ML2_.jpg" alt="Flake by Matthew Dooley" style="width:200px;height:200px;">
-	    </div>
-	    <div class="flip-card-back">
-	      <h3>Flake</h3>
-	      <p> by:Matthew Dooley</p>
-	      <a href="https://www.pinterest.ru/pin/682436149773888725/">Read this Book</a>
-	    </div>
-	  </div>
-	</div>
-	<br>
-	<br>
-	<br>
-<footer>
-  <h2>REVUE</h2>
-  <p>Knowledge with Entertainment - REVUE</p>
-</footer>
+     </div>
+   </div>
+ </section>
 </body>
 </html>

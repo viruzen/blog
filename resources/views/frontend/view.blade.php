@@ -88,13 +88,13 @@ color:black;
 
       <p>{!! html_entity_decode($blog->body) !!}</p>
       <form action="/html/tags/html_form_tag_action.cfm" method="post">
-<textarea name="comments" id="comments" style="width:92%;height:140px;padding:2%;font-size:1.2em;border:12px groove #6DB72C;">
+<textarea name="comments" id="comments" style="width:96%;height:150px;padding:2%;font-size:1.2em;border:1px solid #6DB72C;">
 Enter your comments here...
 </textarea><br>
 <input type="submit" value="Submit Comment">
 </form>
     </div>
-    
+
   </div>
  </div>
  <footer>

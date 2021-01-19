@@ -9,6 +9,332 @@
   <link href="https://fonts.googeapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
  <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
+
+url('https://fonts.googleapis.com/css?family=Raleway:300,400');
+body {
+  background: lightgreen;
+  font-family: 'Raleway', sans-serif;
+}
+
+
+/* Heading */
+
+h1 {
+  font-size: 1.5em;
+  text-align: center;
+  padding: 70px 0 0 0;
+  color: black;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
+
+
+/* Layout Styling */
+
+#container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 50px 0 150px 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+
+/* Button Styles */
+
+.button {
+  display: inline-flex;
+  height: 40px;
+  width: 150px;
+  border: 2px solid green;
+  margin: 20px 20px 20px 20px;
+  color: green;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: .8em;
+  letter-spacing: 1.5px;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+a {
+  color: green;
+  text-decoration: none;
+  letter-spacing: 1px;
+}
+
+
+/* First Button */
+
+#arrow-hover {
+  width: 15px;
+  height: 10px;
+  position: absolute;
+  transform: spin(60px);
+  opacity: 0;
+  -webkit-transition: all .25s cubic-bezier(.14, .59, 1, 1.01);
+  transition: all .15s cubic-bezier(.14, .59, 1, 1.01);
+  margin: 0;
+  padding: 0 5px;
+}
+
+a#button-1:hover img {
+  width: 15px;
+  opacity: 1;
+  transform: spin(50px);
+}
+
+
+/* Second Button */
+
+#button-2 {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+#button-2 a {
+  position: relative;
+  transition: all .35s ease-Out;
+}
+
+#spin {
+  width: 0;
+  height: 0;
+  opacity: 0;
+  left: 70px;
+  top: 20px;
+  transform: rotate(0deg);
+  background: none;
+  position: absolute;
+  transition: all .5s ease-Out;
+}
+
+#button-2:hover #spin {
+  width: 200%;
+  height: 500%;
+  opacity: 1;
+  left: -70px;
+  top: -70px;
+  background: green;
+  transform: rotate(80deg);
+}
+
+#button-2:hover a {
+  color: lightgreen;
+}
+
+
+/* Third Button */
+
+#button-3 {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+#button-3 a {
+  position: relative;
+  transition: all .45s ease-Out;
+}
+
+#spin {
+  width: 0;
+  height: 0;
+  opacity: 0;
+  left: 70px;
+  top: 20px;
+  transform: rotate(0deg);
+  background: none;
+  position: absolute;
+  transition: all .5s ease-Out;
+}
+
+#button-3:hover #spin {
+  width: 200%;
+  height: 500%;
+  opacity: 1;
+  left: -70px;
+  top: -70px;
+  background: green;
+  transform: rotate(80deg);
+}
+
+#button-3:hover a {
+  color: lightgreen;
+}
+
+/* Fourth Button */
+
+#button-4 {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+#button-4 a {
+  position: relative;
+  transition: all .45s ease-Out;
+}
+
+#spin {
+  width: 0;
+  height: 0;
+  opacity: 0;
+  left: 70px;
+  top: 20px;
+  transform: rotate(0deg);
+  background: none;
+  position: absolute;
+  transition: all .5s ease-Out;
+}
+
+#button-4:hover #spin {
+  width: 200%;
+  height: 500%;
+  opacity: 1;
+  left: -70px;
+  top: -70px;
+  background: green;
+  transform: rotate(80deg);
+}
+
+#button-4:hover a {
+  color: lightgreen;
+}
+
+
+/* Fifth Button */
+
+#button-5 {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+#button-5 a {
+  position: relative;
+  transition: all .45s ease-Out;
+}
+
+#spin {
+  width: 0;
+  height: 0;
+  opacity: 0;
+  left: 70px;
+  top: 20px;
+  transform: rotate(0deg);
+  background: none;
+  position: absolute;
+  transition: all .5s ease-Out;
+}
+
+#button-5:hover #spin {
+  width: 200%;
+  height: 500%;
+  opacity: 1;
+  left: -70px;
+  top: -70px;
+  background: green;
+  transform: rotate(80deg);
+}
+
+#button-5:hover a {
+  color: lightgreen;
+}
+
+
+/* Sixth Button */
+
+#button-6 {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+#button-6 a {
+  position: relative;
+  transition: all .45s ease-Out;
+}
+
+#spin {
+  width: 0;
+  height: 0;
+  opacity: 0;
+  left: 70px;
+  top: 20px;
+  transform: rotate(0deg);
+  background: none;
+  position: absolute;
+  transition: all .5s ease-Out;
+}
+
+#button-6:hover #spin {
+  width: 200%;
+  height: 500%;
+  opacity: 1;
+  left: -70px;
+  top: -70px;
+  background: green;
+  transform: rotate(80deg);
+}
+
+#button-6:hover a {
+  color: lightgreen;
+}
+
+
+/* Seventh Button */
+
+#button-7 {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+#button-7 a {
+  position: relative;
+  left: 0;
+  transition: all .45s ease-Out;
+}
+
+#spin {
+  width: 0;
+  height: 0;
+  opacity: 0;
+  left: 70px;
+  top: 20px;
+  transform: rotate(0deg);
+  background: none;
+  position: absolute;
+  transition: all .5s ease-Out;
+}
+
+
+#button-7:hover #spin {
+  width: 200%;
+  height: 500%;
+  opacity: 1;
+  left: -70px;
+  top: -70px;
+  background: green;
+  transform: rotate(80deg);
+}
+#button-7:hover a {
+  color: lightgreen;
+}
+
+@media screen and (min-width:1000px) {
+  h1 {
+    font-size: 2.2em;
+  }
+  #container {
+    width: 50%;
+  }
+}
 body {
   font-family: "Lato", sans-serif;
 
@@ -87,66 +413,50 @@ color:black;
   float: left; /* Float the buttons side by side */
 
 }
-
-/* Clear floats (clearfix hack) */
-.btn-group:after {
-  content: "";
-  clear: both;
-  display: table;
-
-}
-
-.btn-group button:not(:last-child) {
-  border-right: none; /* Prevent double borders */
-}
-
-/* Add a background color on hover */
-.btn-group button:hover {
-  background-color: #3e8e41;
-}
-
-.center {
-  margin: 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-}
 </style>
 </head>
+
 <body>
-@include('layouts.nav')
+  @include('layouts.nav')
+  <h1>CATEGORIES</h1>
+<br>
+<br>
+<!-- Flex Container -->
+<div id="container">
 
-  <section class="my-5">
-    <div class="py-5">
-      <h1 class="text-center">Categories:</h1></div>
-</section>
-<br>
-<br>
-<br>
 
-    <div class="col-12"> <div class="center">
-<button type="button" class="btn btn-outline-primary">STORY</button>
-<button type="button" class="btn btn-outline-secondary">POEM</button>
-<button type="button" class="btn btn-outline-success">TRAVEL</button></div></div>
-<br>
+  <div class="button" id="button-2">
+    <div id="spin"></div>
+    <a href="#">Story</a>
+  </div>
 
-<br>
-<div class="col-12"> <div class="center">
-<button type="button" class="btn btn-outline-danger">FOOD</button>
-<button type="button" class="btn btn-outline-warning">FASHION</button>
-<button type="button" class="btn btn-outline-info">SPORTS</button>
+  <div class="button" id="button-3">
+    <div id="spin"></div>
+    <a href="#">Poem</a>
+  </div>
 
-</div></div>
-<br>
-<br>
-<br>
-<br>
-<br>
-</body>
-</html>
-</section>
+  <div class="button" id="button-4">
+    <div id="spin"></div>
+    <a href="#">Travel</a>
+  </div>
+
+  <div class="button" id="button-5">
+    <div id="spin"></div>
+    <a href="#">Fashion</a>
+  </div>
+
+  <div class="button" id="button-6">
+    <div id="spin"></div>
+    <a href="#">Food</a>
+  </div>
+
+  <div class="button" id="button-7">
+    <div id="spin"></div>
+    <a href="#">Sports</a>
+  </div>
+
+  <!-- End Container -->
+</div>
 <footer>
   <h2>REVUE</h2>
   <p>Knowledge with Entertainment - REVUE</p>

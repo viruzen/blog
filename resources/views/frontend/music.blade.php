@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title></title>
+  <title>MUSIC</title>
 <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="css/style.css">
@@ -35,9 +35,11 @@ ul.thumbs li a:hover { color:#f00 }
 ul.thumbs li a:hover img { border-color:#f00 }
 
 body {
-  font-family: "Lato", sans-serif; height: 2250px;
+  font-family: "Lato", sans-serif;
+  height: 1450px;
   background: linear-gradient(141deg, #0fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);
 }
+
 
 .sidebar {
   height: 100%;
@@ -97,8 +99,15 @@ body {
   .sidebar a {font-size: 18px;}
 }
 
-body {
-  font-family: Arial, Helvetica, sans-serif;
+
+
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: center;
+  align-items: center;
+  grid-gap: 30px;
 }
 
 .flip-card {
@@ -141,26 +150,26 @@ body {
   color: black;
   transform: rotateY(180deg);
 }
-
 footer {
 text-align: center;
 padding: 3px;
 background-color:lightgrey;
 color:black;
 }
-
 </style>
 </head>
 
 <body>
 @include('layouts.nav')
-<section class="my-5">
+
   <div class="py-5">
-    <h1 style="text-align:center">MUSIC</h1>
+    <h1 class="text-center">MUSIC</h1>
+  </div>
 
-<h3>Top 10 Songs :</h3>
-<br>
 
+<section id="team">
+  <div class="container">
+    <div class="grid">
 
 <div class="flip-card">
   <div class="flip-card-inner">
@@ -173,8 +182,7 @@ color:black;
     </div>
   </div>
 </div>
-<br>
-<br>
+
 
 
 <div class="flip-card">
@@ -188,8 +196,7 @@ color:black;
     </div>
   </div>
 </div>
-<br>
-<br>
+
 
 <div class="flip-card">
   <div class="flip-card-inner">
@@ -202,22 +209,8 @@ color:black;
     </div>
   </div>
 </div>
-<br>
-<br>
 
-<div class="flip-card">
-  <div class="flip-card-inner">
-    <div class="flip-card-front">
-        <img src="https://i1.wp.com/pictures.abebooks.com/isbn/9780525658696.jpg" alt=" A Burning" style="width:200px;height:200px;">
-    </div>
-    <div class="flip-card-back">
-      <h3>A Burning</h3>
-      <a href="https://allbooksworld.com/a-burning-by-megha-majumdar-251/">Click here to Listen</a>
-    </div>
-  </div>
-</div>
-<br>
-<br>
+
 
 
 <div class="flip-card">
@@ -231,8 +224,7 @@ color:black;
     </div>
   </div>
 </div>
-<br>
-<br>
+
 
 
 <div class="flip-card">
@@ -246,8 +238,7 @@ color:black;
     </div>
   </div>
 </div>
-<br>
-<br>
+
 
 
 <div class="flip-card">
@@ -261,8 +252,7 @@ color:black;
     </div>
   </div>
 </div>
-<br>
-<br>
+
 
 
 <div class="flip-card">
@@ -277,8 +267,7 @@ color:black;
     </div>
   </div>
 </div>
-<br>
-<br>
+
 
 <div class="flip-card">
   <div class="flip-card-inner">
@@ -291,8 +280,7 @@ color:black;
     </div>
   </div>
 </div>
-<br>
-<br>
+
 
 <div class="flip-card">
   <div class="flip-card-inner">
@@ -305,8 +293,7 @@ color:black;
     </div>
   </div>
 </div>
-<br>
-<br>
+
 
 <div class="flip-card">
   <div class="flip-card-inner">
@@ -320,12 +307,15 @@ color:black;
   </div>
 </div>
 </section>
-<br>
-<br>
+
 
 <footer>
   <h2>REVUE</h2>
   <p>Knowledge with Entertainment - REVUE</p>
 </footer>
+
+     </div>
+   </div>
+ </section>
 </body>
 </html>

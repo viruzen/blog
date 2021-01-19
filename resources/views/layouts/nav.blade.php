@@ -6,7 +6,6 @@
             <a href="{{route('blog.index')}}">Home</a>
             <a href="{{route('about')}}">About</a>
             <a href="{{route('category')}}">Category</a>
-            <a href="{{route('tags')}}">Tags</a>
             <a href="{{route('book')}}">Book</a>
             <a href="{{route('music')}}">Music</a>
 
