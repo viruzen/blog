@@ -170,49 +170,50 @@
 </head>
 <body>
 
-
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 <div class="container">
     <div class="row">
-        <div class="col-md-3">
-            <div class="text-center">
-                <div class="master-card pt-5 pb-5">
-                    <div class="thumb-lg member-thumb mx-auto card-img-top zmdi-image-alt">
-                        <img src="img/a.jpg" class="rounded-circle img-thumbnail" alt="profile-image" />
-                    </div>
-                    <div class="user-data">
-                        <div class="fullname pt-2"><h2>{{$user['name']}}</h2></div>
-                        <p class="text-muted">
-                            {{'@'.$user['username']}}
-                            <span class="verify pb-10">
-                                <img src="https://www.flaticon.com/svg/static/icons/svg/190/190411.svg" alt="verify-badge" height="15px" width="15px">
-                            </span>
-                        </p>
+        <div class="col-md-3" id="app">
+          <div class="text-center">
+              <div class="master-card pt-5 pb-5">
+                  <div class="thumb-lg member-thumb mx-auto card-img-top zmdi-image-alt">
+                      <img src="img/a.jpg" class="rounded-circle img-thumbnail" alt="profile-image" />
+                  </div>
+                  <div class="user-data">
+                      <div class="fullname pt-2"><h2>name</h2></div>
+                      <p class="text-muted">
+                          0
+                          <span class="verify pb-10">
+                              <img src="https://www.flaticon.com/svg/static/icons/svg/190/190411.svg" alt="verify-badge" height="15px" width="15px">
+                          </span>
+                      </p>
+                      <span v-if="follow==1">
                         <button type="button" class="btn btn-primary mt-3 btn-rounded waves-effect w-md waves-light">Follow</button>
+                      </span>
 
-                        <div class="row">
-                            <div class="col-4">
-                                <div class="mt-3">
-                                    <h4>{{$user['post_count']}}</h4>
-                                    <p class="mb-0 text-muted">Posts</p>
-                                </div>
-                            </div>
-                            <div class="col-4">
-                                <div class="mt-3">
-                                    <h4>{{$user['follower_count']}}</h4>
-                                    <p class="mb-0 text-muted">Followers</p>
-                                </div>
-                            </div>
-                            <div class="col-4">
-                                <div class="mt-3">
-                                    <h4>{{$user['follow_count']}}</h4>
-                                    <p class="mb-0 text-muted">Following</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                      <div class="row">
+                          <div class="col-4">
+                              <div class="mt-3">
+                                  <h4>postcount</h4>
+                                  <p class="mb-0 text-muted">Posts</p>
+                              </div>
+                          </div>
+                          <div class="col-4">
+                              <div class="mt-3">
+                                  <h4>followercount</h4>
+                                  <p class="mb-0 text-muted">Followers</p>
+                              </div>
+                          </div>
+                          <div class="col-4">
+                              <div class="mt-3">
+                                  <h4>followcount</h4>
+                                  <p class="mb-0 text-muted">Following</p>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
         </div>
         <div class="col-md-8 pr-3">
             <h1>Blogs</h1>
@@ -265,5 +266,31 @@
   <p>Knowledge with Entertainment - REVUE</p>
 </footer>
 
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<script>
+ const app = new Vue({
+   el: #app,
+   data : {
+     follow: 0,
+     followers:0,
+     following:0,
+     post:0
+   },
+   methods: {
+     followed: function(){
+       this.follow=1
+     },
+     followercount: function(){
+       this.follower=1
+     },
+     followingcount: function(){
+       this.following=1
+     },
+     postcount: function(){
+       this.post=1
+     },
+   }
+ })
+</script>
 </body>
 </html>

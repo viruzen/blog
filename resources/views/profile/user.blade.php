@@ -9,6 +9,8 @@
 {{--  <link href="https://fonts.googeapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">--}}
  <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
+
+
 body {
   font-family: "Lato", sans-serif;
 }
@@ -169,7 +171,6 @@ h4 {
 </style>
 </head>
 <body>
-
 
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 <div class="container">
