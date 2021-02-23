@@ -18,4 +18,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::middleware('api')->get('/v1/userGetData/{user}', 'Api\UserController@userGetData');
+// Route::middleware('api')->get('/v1/userGetData/{user}', 'Api\UserController@userGetData');
+Route::middleware('api')->get('/v1/{user_id}', 'Api\UserController@userGetData');
+Route::middleware('api')->post('/v1/follow/{auth_id}/{user_id}', 'Api\UserController@followUser');
+Route::middleware('api')->post('/v1/unfollow/{auth_id}/{user_id}', 'Api\UserController@unfollowUser');

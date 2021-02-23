@@ -73,7 +73,7 @@ class ProfileController extends Controller
             $user->post_count=Blog::where('user_id',$user->id)->count();
             $user->follow_count=Follow::where('auth_id',$user->id)->count();
             $user->follower_count=Follow::where('user_id',$user->id)->count();
-
+            $user->follow = Follow::where(['user_id' => $user->id, 'auth_id' => Auth::user()->id ])->count();
             $blogs = Blog::with(['user','category','tags','comments'])->where('user_id',$user->id)->paginate(9);
             return view('profile.profile',compact('user','blogs'));
         } else {

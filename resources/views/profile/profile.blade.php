@@ -191,7 +191,7 @@
                         <button type="button" class="btn btn-primary mt-3 btn-rounded waves-effect w-md waves-light" v-on:click="followed()">Follow</button>
                       </span>
                       <span v-else>
-                        <button type="button" class="btn btn-primary mt-3 btn-rounded waves-effect w-md waves-light" v-on:click="unfollowed()">Unfollow</button>
+                        <button type="button" class="btn btn-secondary mt-3 btn-rounded waves-effect w-md waves-light" v-on:click="unfollowed()">Unfollow</button>
                       </span>
 
                       <div class="row">
@@ -270,20 +270,25 @@
   <p>Knowledge with Entertainment - REVUE</p>
 </footer>
 
-<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<script src="https://unpkg.com/vue"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
 <script>
  const app = new Vue({
    el: '#profile',
    data : {
-     follow: 0,
+     follow: {!! json_encode($user->follow) !!},
      followers: {!! json_encode($user->follower_count) !!},
+     user_id: {!! json_encode($user->id) !!},
+     auth_id: {!! json_encode(Auth::user()->id) !!}
    },
    methods: {
      followed: function() {
+       axios.post('http://localhost/blog/public/api/v1/follow/{!! json_encode(Auth::user()->id) !!}/{!! json_encode($user->id) !!}');
        this.follow=1
        this.followers +=1
      },
      unfollowed: function() {
+       axios.post('http://localhost/blog/public/api/v1/unfollow/{!! json_encode(Auth::user()->id) !!}/{!! json_encode($user->id) !!}');
        this.follow=0
        this.followers -=1
      }
