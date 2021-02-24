@@ -70,6 +70,10 @@ class ProfileController extends Controller
     {
         $user = User::all()->where('username',$username)->first();
         if(!empty($user)){
+            if($user->id == Auth::user()->id){
+              return redirect('profile');
+            }
+
             $user->post_count=Blog::where('user_id',$user->id)->count();
             $user->follow_count=Follow::where('auth_id',$user->id)->count();
             $user->follower_count=Follow::where('user_id',$user->id)->count();
@@ -114,4 +118,14 @@ class ProfileController extends Controller
     {
         //
     }
+
+    public function follow($username){
+      $user = User::where('username',$username)->get()->first();
+      return view('profile.follow',compact('user'));
+    }
+
+    public function following($username){
+      return view('profile.following',compact('username'));
+    }
+
 }

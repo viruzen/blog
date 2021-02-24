@@ -202,17 +202,20 @@
                               </div>
                           </div>
                           <div class="col-4">
-                              <div class="mt-3">
-                                  <h4>@{{followers}}</h4>
-                                  <p class="mb-0 text-muted">Followers</p>
-                              </div>
+                              <a href="{{ route('user.follow',['username' => $user->username]) }}" style="cursor: pointer;">
+                                <div class="mt-3">
+                                    <h4>@{{followers}}</h4>
+                                    <p class="mb-0 text-muted">Followers</p>
+                                </div>
+                              </a>
                           </div>
                           <div class="col-4">
+                            <a href="{{ route('user.following',['username' => $user->username]) }}" style="cursor: pointer;">
                               <div class="mt-3">
-                                <input type="hidden" v-model="followers" value="10">
                                   <h4>{{$user->follow_count}}</h4>
                                   <p class="mb-0 text-muted">Following</p>
                               </div>
+                            </a>
                           </div>
                       </div>
                   </div>
@@ -270,7 +273,7 @@
   <p>Knowledge with Entertainment - REVUE</p>
 </footer>
 
-<script src="https://unpkg.com/vue"></script>
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
 <script>
  const app = new Vue({

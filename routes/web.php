@@ -47,3 +47,5 @@ Route::get('/home', function (){
     return redirect('/profile');
 })->name('home');
 Route::get('/{username}','ProfileController@show')->name('user');
+Route::get('/{username}/follow','ProfileController@follow')->name('user.follow');
+Route::get('/{username}/following','ProfileController@following')->name('user.following');
