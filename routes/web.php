@@ -28,8 +28,10 @@ Route::prefix('blog')->group(function ()  {
     Route::post('/','BlogController@store')->name('blog.store');
 });
 
-Route::prefix('profile')->middleware('auth')->group(function() {
+Route::prefix('user')->middleware('auth')->group(function() {
     Route::get('/','ProfileController@index')->name('profile.index');
+    Route::get('/edit','ProfileController@edit')->name('profile.edit');
+    Route::post('/{id}','ProfileController@update')->name('profile.update');
 });
 
 
@@ -44,7 +46,7 @@ Route::get('/tags','TagsController@tags')->name('tags');
 Auth::routes();
 
 Route::get('/home', function (){
-    return redirect('/profile');
+    return redirect('/user');
 })->name('home');
 Route::get('/{username}','ProfileController@show')->name('user');
 Route::get('/{username}/follow','ProfileController@follow')->name('user.follow');

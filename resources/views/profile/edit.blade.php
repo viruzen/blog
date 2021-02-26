@@ -4,8 +4,8 @@
   <title></title>
 <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" type="text/css" href="css/style.css">
-  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
 {{--  <link href="https://fonts.googeapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">--}}
  <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
@@ -207,7 +207,6 @@ h4 {
     background-color: #4CAF50;
     color: #fff
 }
-
 .rounded{
   height: 300px;
 }
@@ -222,13 +221,11 @@ h4 {
       <div class="card text-center" style="margin: 70px">
 
         <div class="py-4 p-2">
-            <div>
-               @if(!empty($image))
-                <img src="{{$image->url}}" class="rounded">
-              @else
-                <img src="https://i.imgur.com/EnANUqj.jpg" class="rounded" width="100">
-              @endif
-             </div>
+           @if(!empty($image))
+            <img src="{{asset($image->url)}}" class="rounded">
+          @else
+            <img src="https://i.imgur.com/EnANUqj.jpg" class="rounded" width="100">
+          @endif
             <div class="fullname pt-2"><h2>{{$user->name}}</h2></div>
             <div class="mt-3 d-flex flex-row justify-content-center">
                 <h5>{{$user->username}}</h5> <span class="dots"><i class="fa fa-check"></i></span>
@@ -260,37 +257,28 @@ h4 {
 
   <div class="col-sm-9">
       <h1>
-          Blogs
+          Edit
       </h1>
-      <div class="">
-              <div class="row">
-                  @foreach($blogs as $blog)
-                  <div class="col-4 pb-5">
-                      <div class="card shadow-sm">
-                          <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title>
-                              <rect width="100%" height="100%" fill="#55595c"/>
-                              <text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-
-                          <div class="card-body">
-                              <p class="card-header">{{$blog->title}}</p>
-                              <div class="tags">
-                                  @foreach($blog->tags as $tag)
-                                      <span class="badge badge-secondary">{{$tag->name}}</span>
-                                  @endforeach
-                              </div>
-                              <div class="d-flex justify-content-between align-items-center">
-                                  <div class="btn-group">
-                                      <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                      <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                                  </div>
-                                  <small class="text-muted">Total Comments: <b>{{count($blog->comments)}}</b></small>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-                  @endforeach
-              </div>
-      </div>
+      <form class="form-horizontal" method="POST" action="{{ route('profile.update',['id' => $user->id]) }}" enctype="multipart/form-data">
+        {{ csrf_field() }}
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" class="form-control" id="name" aria-describedby="name" value="{{$user->name}}" name="name" placeholder="Name">
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" class="form-control" id="email" aria-describedby="email" value="{{$user->email}}" name="email" placeholder="Email">
+        </div>
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" class="form-control" id="username" aria-describedby="username" value="{{$user->username}}" name="username" placeholder="Username">
+        </div>
+        <div class="form-group">
+          <label for="profile">Image</label>
+          <input id="name" type="file" class="form-control" name="profile"  />
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
   </div>
 </div>
 <!-- END GRID -->

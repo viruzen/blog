@@ -342,7 +342,7 @@
      follow_id: 0
    },
    created() {
-      fetch('http://localhost/blog/public/api/v1/{!! $user->id !!}/follow/{!! Auth::user()->id !!}')
+      fetch('http://localhost/blog/public/api/v1/{!! $user->id !!}/following/{!! Auth::user()->id !!}')
           .then(response => response.json())
           .then(json => {
             this.users = json.users

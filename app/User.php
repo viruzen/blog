@@ -6,6 +6,7 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use App\Blog;
+use App\Image;
 
 class User extends Authenticatable
 {
@@ -40,5 +41,9 @@ class User extends Authenticatable
 
     public function blogs(){
       return $this->hasMany(Blog::class);
+    }
+
+    public function image(){
+      return $this->hasOne(Image::class);
     }
 }

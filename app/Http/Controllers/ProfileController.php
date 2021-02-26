@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Follow;
 use App\Blog;
+use App\Image;
 class ProfileController extends Controller
 {
     /**
@@ -16,12 +17,13 @@ class ProfileController extends Controller
     public function index()
     {
         $user = Auth::user();
+        $image = $user->image;
         $user->post_count=Blog::where('user_id',$user->id)->count();
         $user->follow_count=Follow::where('auth_id',$user->id)->count();
         $user->follower_count=Follow::where('user_id',$user->id)->count();
 
         $blogs = Blog::with(['user','category','tags','comments'])->where('user_id',$user->id)->paginate(9);
-        return view('profile.user',compact('user','blogs'));
+        return view('profile.user',compact('user','blogs','image'));
 
     }
 
@@ -71,7 +73,7 @@ class ProfileController extends Controller
         $user = User::all()->where('username',$username)->first();
         if(!empty($user)){
             if($user->id == Auth::user()->id){
-              return redirect('profile');
+              return redirect('user');
             }
 
             $user->post_count=Blog::where('user_id',$user->id)->count();
@@ -91,9 +93,11 @@ class ProfileController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit()
     {
-        //
+        $user = Auth::user();
+        $image = $user->image;
+        return view('profile.edit',compact('user','image'));
     }
 
     /**
@@ -103,10 +107,31 @@ class ProfileController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
-        //
-    }
+     public function update(Request $request, $id)
+     {
+         $user = User::findorfail($id);
+
+         if(!empty($user)){
+           $user->name = $request->name;
+           $user->email = $request->email;
+           $user->username = $request->username;
+
+           $user->save();
+
+           if($request->profile){
+               $imageName =  time().'.'.$request->profile->extension();
+               $request->profile->move(public_path('profile'), $imageName);
+
+               $image = new Image();
+               $image->user_id = $id;
+               $image->url = 'profile/'.$imageName;
+
+               $image->save();
+           }
+         }
+
+         return redirect()->route('profile.index');
+     }
 
     /**
      * Remove the specified resource from storage.
@@ -125,7 +150,8 @@ class ProfileController extends Controller
     }
 
     public function following($username){
-      return view('profile.following',compact('username'));
+      $user = User::where('username',$username)->get()->first();
+      return view('profile.following',compact('user'));
     }
 
 }
