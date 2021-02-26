@@ -291,8 +291,10 @@
                     <h5>@@{{user.username}}</h5> <span class="dots"><i class="fa fa-check"></i></span>
                 </div>
                 <div>
-                   <button class="btn btn-success" v-if="user.isFollow == 0" :id="index" :index="index" v-on:click="followed($event)">Follow</button>
-                   <button class="btn btn-outline-secondary" :id="index"  :index="index" v-on:click="unfollowed($event)" v-else>Unfollow</button>
+                   <span v-if="auth_username !== user.username">
+                     <button class="btn btn-success" v-if="user.isFollow == 0" :name="user.id" :id="index" :index="index" v-on:click="followed($event)">Follow</button>
+                     <button class="btn btn-outline-secondary" :id="index" :name="user.id"  :index="index" v-on:click="unfollowed($event)" v-else>Unfollow</button>
+                   </span>
                    <button class="btn btn-outline-secondary">
                      <i class="fa fa-users"></i> View
                    </button>
@@ -325,6 +327,7 @@
  const app = new Vue({
    el: '#follow',
    data : {
+     auth_username: {!! json_encode(Auth::user()->username) !!},
      username: {!! json_encode($user->username) !!},
      users: [],
      follow_id: 0
@@ -339,11 +342,19 @@
    methods: {
      followed: function(event) {
         follow_id = event.currentTarget.id
+        user_id = event.currentTarget.name
+        url = 'http://localhost/blog/public/api/v1/follow/'+{!! json_encode(Auth::user()->id) !!}+'/'+user_id
+        axios.post(url)
+        console.log(url)
         this.users[follow_id].isFollow = 1
         this.users[follow_id].follow_count += 1
      },
      unfollowed: function(event) {
         follow_id = event.currentTarget.id
+        user_id = event.currentTarget.name
+        console.log(user_id)
+        url = 'http://localhost/blog/public/api/v1/unfollow/'+{!! json_encode(Auth::user()->id) !!}+'/'+user_id
+        axios.post(url)
         this.users[follow_id].isFollow = 0
         this.users[follow_id].follow_count-=1
      }
