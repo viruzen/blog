@@ -301,13 +301,13 @@
             <div>
                 <ul class="list-unstyled list">
                     <li> <span class="font-weight-bold">Post</span>
-                        <div> <span class="mr-1">5</span> <i class="fa fa-angle-right"></i> </div>
+                        <div> <span class="mr-1">@{{user.post_count}}</span> <i class="fa fa-angle-right"></i> </div>
                     </li>
                     <li> <span class="font-weight-bold">Comments</span>
                         <div> <span class="mr-1">45</span> <i class="fa fa-angle-right"></i> </div>
                     </li>
-                    <li> <span class="font-weight-bold">Favorites</span>
-                        <div> <span class="mr-1">15</span> <i class="fa fa-angle-right"></i> </div>
+                    <li> <span class="font-weight-bold">Followers</span>
+                        <div> <span class="mr-1">@{{user.follow_count}}</span> <i class="fa fa-angle-right"></i> </div>
                     </li>
                 </ul>
             </div>
@@ -339,15 +339,13 @@
    methods: {
      followed: function(event) {
         follow_id = event.currentTarget.id
-        console.log(follow_id)
         this.users[follow_id].isFollow = 1
-        console.log(this.users[follow_id].isFollow)
+        this.users[follow_id].follow_count += 1
      },
      unfollowed: function(event) {
         follow_id = event.currentTarget.id
-        console.log(follow_id)
         this.users[follow_id].isFollow = 0
-        console.log(this.users[follow_id].isFollow)
+        this.users[follow_id].follow_count-=1
      }
    }
  })

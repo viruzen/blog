@@ -40,6 +40,8 @@ class UserController extends Controller
       $auth_user = User::find($value->auth_id);
       $isFollow = Follow::where(['user_id' => $value->auth_id, 'auth_id' => $auth_id ])->count();
       $users[$key] = $auth_user;
+      $users[$key]->post_count = $auth_user->blogs->count();
+      $users[$key]->follow_count =  Follow::where(['user_id' => $auth_user->id ])->count();
       $users[$key]->isFollow = $isFollow;
     }
     $data['users'] = $users;
