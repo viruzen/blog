@@ -4,7 +4,8 @@
   <title></title>
 <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <link href="https://fonts.googeapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
  <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -251,7 +252,7 @@
     width: 20px;
     margin-top: 4px;
     margin-left: 4px;
-    background-color: #dc3545;
+    background-color: #4CAF50;
     border-radius: 50%;
     border: 2px solid #fff;
     display: flex;
@@ -271,7 +272,7 @@
 }
 
 .list li:hover {
-    background-color: #dc3545;
+    background-color: #4CAF50;
     color: #fff
 }
 </style>
@@ -280,18 +281,18 @@
 
     @include('layouts.nav')
     <div class="row" id="follow">
-      <div class="col-sm-4" v-for="user in users">
+      <div class="col-sm-3" v-for="(user, index) in users">
 
-          <div class="card text-center" style="margin: 20px">
+          <div class="card text-center" style="margin: 70px">
 
             <div class="py-4 p-2">
                 <div> <img src="https://i.imgur.com/EnANUqj.jpg" class="rounded" width="100"> </div>
                 <div class="mt-3 d-flex flex-row justify-content-center">
-                    <h5>@{{user.name}}</h5> <span class="dots"><i class="fa fa-check"></i></span>
-                </div> <span>Member since @{{user.created_at}}</span>
-                <div class="mt-3">
-                   <button class="btn btn-danger" v-if="user.isFollow == 0" :index="user.id" v-on:click="followed(user.id)">Follow</button>
-                   <button class="btn btn-outline-secondary" :index="user.id" v-else>Unfollow</button>
+                    <h5>@@{{user.username}}</h5> <span class="dots"><i class="fa fa-check"></i></span>
+                </div>
+                <div>
+                   <button class="btn btn-success" v-if="user.isFollow == 0" :id="index" :index="index" v-on:click="followed($event)">Follow</button>
+                   <button class="btn btn-outline-secondary" :id="index"  :index="index" v-on:click="unfollowed($event)" v-else>Unfollow</button>
                    <button class="btn btn-outline-secondary">
                      <i class="fa fa-users"></i> View
                    </button>
@@ -326,7 +327,7 @@
    data : {
      username: {!! json_encode($user->username) !!},
      users: [],
-     follow_id: null
+     follow_id: 0
    },
    created() {
       fetch('http://localhost/blog/public/api/v1/{!! $user->id !!}/follow/{!! Auth::user()->id !!}')
@@ -336,7 +337,18 @@
           })
    },
    methods: {
-
+     followed: function(event) {
+        follow_id = event.currentTarget.id
+        console.log(follow_id)
+        this.users[follow_id].isFollow = 1
+        console.log(this.users[follow_id].isFollow)
+     },
+     unfollowed: function(event) {
+        follow_id = event.currentTarget.id
+        console.log(follow_id)
+        this.users[follow_id].isFollow = 0
+        console.log(this.users[follow_id].isFollow)
+     }
    }
  })
 </script>
