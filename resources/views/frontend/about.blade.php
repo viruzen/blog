@@ -18,17 +18,17 @@ color:black;
 }
 
 a:link {
-  color: green;
+  color: yellow;
   background-color: transparent;
   text-decoration: none;
 }
 a:visited {
-  color: pink;
+  color:white;
   background-color: transparent;
   text-decoration: none;
 }
 a:hover {
-  color: red;
+  color: pink;
   background-color: transparent;
   text-decoration: underline;
 }
@@ -113,12 +113,12 @@ a:active {
         <img src="img/R.jpg" class="img-fluid aboutimg">
       </div>
       <div class="col-lg-6 col-md-6 col-12">
-        <h3 class="display-7">This is REVUE</h3>
-        <p class="py-3">A single platform for large varieties of entertainment,
+        <h2 class="display-7">This is REVUE</h2>
+        <h4 class="py-5">A single platform for large varieties of entertainment,
 under one roof, is a flexible platform & may change or add
 number of other sections as per the change in the aptitude &
 interest with time of the users to remain relevant for every
-generation.</p>
+generation.</h4>
         <div class="btn btn-success"><a href="{{route('moredetails')}}" target="_blank">Check More Details</div>
       </div>
     </div>

@@ -279,7 +279,7 @@
 
    @php
        if(isset($post)) {
-           $tag = $post->tags->pluck('name')->all();
+           $tag = $blog->tags->pluck('name')->all();
        } else {
            $tag = null;
        }
@@ -298,7 +298,7 @@
    </div>
    <div class="flex items-center justify-end mt-6">
      <button type="submit" onclick="tinyMCE.triggerSave();" class="btn btn-success">
-                                     {{ __('Post') }}
+                                     {{ __('Blog') }}
                                  </button>
                     </div>
    {!! Form::close() !!}

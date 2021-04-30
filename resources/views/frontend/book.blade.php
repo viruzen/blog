@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>BOOK</title>
+  <title>BOOKS</title>
 <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="css/style.css">
@@ -162,7 +162,7 @@ color:black;
 <body>
 @include('layouts.nav')
 
-  <div class="py-5">
+<div class="py-5">
     <h1 class="text-center">BOOKS</h1>
   </div>
 
@@ -299,7 +299,8 @@ color:black;
       </div>
     </div>
   </div>
-
+</section>
+<br>
 	<footer>
 	  <h2>REVUE</h2>
 	  <p>Knowledge with Entertainment - REVUE</p>
@@ -308,5 +309,6 @@ color:black;
      </div>
    </div>
  </section>
+
 </body>
 </html>
